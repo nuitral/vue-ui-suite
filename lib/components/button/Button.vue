@@ -10,7 +10,7 @@ import { NuitralIconsId } from '@nuitral/icons'
 import { computed, PropType, useAttrs } from 'vue'
 import { NuitralIcon } from '../index'
 
-import { useColorsAttributesValidator } from '../../utils'
+import { useColorsAttributesValidator } from '../../hooks'
 
 const { isValidAttribute } = useColorsAttributesValidator()
 
