@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import dts from 'vite-plugin-dts';
 import path from 'path';
 
 export default defineConfig(({ command }) => {
@@ -12,8 +11,8 @@ export default defineConfig(({ command }) => {
 			lib: {
 				entry: path.resolve(__dirname, 'lib/index.ts'),
 				name: 'vue-ui-suite',
-				fileName: (format) => `vue-ui-suite.${format}.js`,
-			},
+				fileName: format => `vue-ui-suite.${format}.js`,
+			},sourcemap: true,
 			rollupOptions: {
 				external: ['vue'],
 				output: [
@@ -29,18 +28,9 @@ export default defineConfig(({ command }) => {
 					},
 				],
 			},
-			output: {
-				globals: {
-					vue: 'Vue',
-				},
-			},
 		},
 		plugins: [
 			vue(),
-			dts({
-				rollupTypes: true,
-				tsconfigPath: path.resolve(__dirname, 'tsconfig.json'),
-			}),
 		],
 	};
 });

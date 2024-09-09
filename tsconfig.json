@@ -1,21 +1,18 @@
 {
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
-		"skipLibCheck": true,
-		"strict": true,
-		"importHelpers": true,
-		"types": ["vite/client", "vue"],
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
 		"declaration": true,
-		"declarationDir": "./dist",
+		"declarationMap": true,
 		"emitDeclarationOnly": true,
 		"outDir": "./dist",
-		"rootDir": "./lib",
-		"incremental": false
+		"moduleResolution": "node",
+		"target": "ESNext",
+		"module": "ESNext",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": "."
 	},
-	"include": ["lib/**/*.ts", "lib/**/*.vue"],
-	"exclude": ["src", "node_modules"]
+	"include": ["lib/**/*"],
+	"exclude": ["demo", "node_modules"]
 }
