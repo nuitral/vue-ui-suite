@@ -6,7 +6,6 @@ import { NuitralButtonProps } from './types'
 import { NuitralIcon } from '../index'
 
 import { useColorsAttributesValidator } from '../../hooks'
-import { NuitralButtonType } from '@nuitral/types'
 
 const { isValidAttribute } = useColorsAttributesValidator()
 
@@ -25,7 +24,7 @@ const backgroundColor = computed(() => {
 })
 
 withDefaults(defineProps<NuitralButtonProps>(), {
-	type: 'button' as PropType<NuitralButtonType>,
+	type: 'button',
 	icon: null,
 	iconPosition: 'left',
 	disabled: false,
