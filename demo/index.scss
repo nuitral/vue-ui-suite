@@ -1,0 +1,68 @@
+@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
+@include nuitral.generate-theme(nuitral.$light-mode, nuitral.$dark-mode);
+
+$primary-light-scale: nuitral.generate-color-scale(#ff0054);
+$secondary-light-scale: nuitral.generate-color-scale(#00d8ff);
+$accent-light-scale: nuitral.generate-color-scale(#ffdc00);
+$error-light-scale: nuitral.generate-color-scale(#ff4136);
+$success-light-scale: nuitral.generate-color-scale(#2ecc40);
+$warning-light-scale: nuitral.generate-color-scale(#ff851b);
+$info-light-scale: nuitral.generate-color-scale(#0074d9);
+$neutral-light-scale: nuitral.generate-color-scale(#b10dc9);
+$background-light-scale: nuitral.generate-color-scale(#fdfefe);
+$surface-light-scale: nuitral.generate-color-scale(#ffffff);
+
+$light-mode: (
+	primary: $primary-light-scale,
+	secondary: $secondary-light-scale,
+	accent: $accent-light-scale,
+	background: $background-light-scale,
+	surface: $surface-light-scale,
+	error: $error-light-scale,
+	success: $success-light-scale,
+	warning: $warning-light-scale,
+	info: $info-light-scale,
+	neutral: $neutral-light-scale,
+);
+
+$primary-dark-scale: nuitral.generate-color-scale(#ff337a);
+$secondary-dark-scale: nuitral.generate-color-scale(#00a3cc);
+$accent-dark-scale: nuitral.generate-color-scale(#ffd700);
+$error-dark-scale: nuitral.generate-color-scale(#ff6347);
+$success-dark-scale: nuitral.generate-color-scale(#28a745);
+$warning-dark-scale: nuitral.generate-color-scale(#ff7733);
+$info-dark-scale: nuitral.generate-color-scale(#006699);
+$neutral-dark-scale: nuitral.generate-color-scale(#a569bd);
+$background-dark-scale: nuitral.generate-color-scale(#1e1e1e);
+$surface-dark-scale: nuitral.generate-color-scale(#121212);
+
+$dark-mode: (
+	primary: $primary-dark-scale,
+	secondary: $secondary-dark-scale,
+	accent: $accent-dark-scale,
+	background: $background-dark-scale,
+	surface: $surface-dark-scale,
+	error: $error-dark-scale,
+	success: $success-dark-scale,
+	warning: $warning-dark-scale,
+	info: $info-dark-scale,
+	neutral: $neutral-dark-scale,
+);
+
+@include nuitral.generate-theme($light-mode, $dark-mode, 'pop');
+@import '@nuitral/icons/dist/nuitral-icons.scss';
+html,
+body {
+	margin: 0;
+	width: 100%;
+}
+
+body {
+	padding: 1rem;
+	box-sizing: border-box;
+	background-color: nuitral.$background !important;
+}
+
+.nuitral-dark-mode {
+	color: white;
+}

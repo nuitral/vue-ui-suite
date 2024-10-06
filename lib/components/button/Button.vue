@@ -1,16 +1,12 @@
 <script lang="ts" setup>
-import {
-	NuitralButtonType,
-	NuitralClass,
-	NuitralIconPosition,
-} from '@nuitral/types'
-
 import { NuitralIconsId } from '@nuitral/icons'
 
 import { computed, PropType, useAttrs } from 'vue'
+import { NuitralButtonProps } from './types'
 import { NuitralIcon } from '../index'
 
 import { useColorsAttributesValidator } from '../../hooks'
+import { NuitralButtonType } from '@nuitral/types'
 
 const { isValidAttribute } = useColorsAttributesValidator()
 
@@ -28,27 +24,12 @@ const backgroundColor = computed(() => {
 	)
 })
 
-defineProps({
-	classes: {
-		type: String as PropType<NuitralClass>,
-		default: '',
-	},
-	type: {
-		type: String as PropType<NuitralButtonType>,
-		default: 'button',
-	},
-	icon: {
-		type: String as PropType<NuitralIconsId>,
-		default: '',
-	},
-	iconPosition: {
-		type: String as PropType<NuitralIconPosition>,
-		default: 'left',
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
+withDefaults(defineProps<NuitralButtonProps>(), {
+	type: 'button' as PropType<NuitralButtonType>,
+	icon: null,
+	iconPosition: 'left',
+	disabled: false,
+	classes: '',
 })
 </script>
 <template>
