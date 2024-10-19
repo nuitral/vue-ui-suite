@@ -9,7 +9,7 @@ import {
 const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	theme: 'nuitral',
 	darkMode: true,
-	id: 'demo-app',
+	rootId: 'demo-app',
 })
 </script>
 
