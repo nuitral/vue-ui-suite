@@ -8,7 +8,7 @@ import {
 
 const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	theme: 'nuitral',
-	darkMode: true,
+	darkMode: false,
 	rootId: 'demo-app',
 })
 </script>

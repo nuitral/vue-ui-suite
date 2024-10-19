@@ -5,7 +5,7 @@ import { computed, PropType, useAttrs } from 'vue'
 import { NuitralButtonProps } from './types'
 import { NuitralIcon } from '../index'
 
-import { useColorsAttributesValidator } from '../../hooks'
+import { useColorsAttributesValidator } from '../../composables'
 
 const { isValidAttribute } = useColorsAttributesValidator()
 

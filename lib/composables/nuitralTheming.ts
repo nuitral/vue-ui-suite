@@ -1,7 +1,7 @@
 import { ref, onMounted } from 'vue'
 import { NuitralThemingOptions } from '@nuitral/types'
 /**
- * Hook that handles theming and dark mode.
+ * Composable that handles theming and dark mode.
  *
  * It applies the selected theme and mode ( light/dark ) to the root element ( rootId ) of the application.
  * Optionally, it can persist settings to localStorage if the `saveSettings` option is enabled.

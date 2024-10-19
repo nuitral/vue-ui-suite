@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NuitralBoxProps } from '@nuitral/types'
-import { useColorsAttributesValidator } from '../../hooks'
+import { useColorsAttributesValidator } from '../../composables'
 import { computed, useAttrs } from 'vue'
 withDefaults(defineProps<NuitralBoxProps>(), {
 	title: '',
