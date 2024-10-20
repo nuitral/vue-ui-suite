@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { NuitralIconsId } from '@nuitral/icons'
-
-import { computed, PropType, useAttrs } from 'vue'
+import { computed, useAttrs } from 'vue'
 import { NuitralButtonProps } from './types'
 import { NuitralIcon } from '../index'
 

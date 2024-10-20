@@ -50,7 +50,7 @@ $dark-mode: (
 );
 
 @include nuitral.generate-theme($light-mode, $dark-mode, 'pop');
-@import '@nuitral/icons/dist/nuitral-icons.scss';
+
 html,
 body {
 	margin: 0;
@@ -61,8 +61,4 @@ body {
 	padding: 1rem;
 	box-sizing: border-box;
 	background-color: nuitral.$background !important;
-}
-
-.nuitral-dark-mode {
-	color: white;
 }

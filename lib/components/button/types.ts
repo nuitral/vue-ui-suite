@@ -12,7 +12,7 @@ import { NuitralIconsId } from '@nuitral/icons'
  */
 
 /**
- * Extends the standard `NuitralButtonProps` with additional properties specific to the nuitral library.
+ * Extends the standard `NuitralButtonProps` with additional properties specific to the nuitral library vue-ui-suite.
  *
  * Properties:
  * - `icon` (optional): Represents the identifier for an icon from the nuitral icon set.

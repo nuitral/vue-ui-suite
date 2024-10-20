@@ -3,14 +3,18 @@ import {
 	NuitralIcon,
 	NuitralButton,
 	NuitralBox,
+	NuitralInput,
 	useNuitralTheming,
 } from '../lib'
+import { ref } from 'vue'
 
 const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	theme: 'nuitral',
 	darkMode: false,
 	rootId: 'demo-app',
 })
+
+const inputModel = ref('Input test')
 </script>
 
 <template>
@@ -21,7 +25,11 @@ const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
 
-	<NuitralButton accent-100 icon="user"> Button </NuitralButton>
+	<NuitralInput v-model="inputModel" :placeholder="'placeholder'" :icon="'user'"></NuitralInput>
+  <NuitralInput v-model="inputModel" :placeholder="'placeholder'" :icon="'user'" type="password" :icon-position="'right'"></NuitralInput>
+  <NuitralInput v-model="inputModel" :placeholder="'placeholder'" :disabled="true"></NuitralInput>
+	{{ inputModel }}
+	<NuitralButton accent icon="user"> Button </NuitralButton>
 	<NuitralButton primary icon="user"></NuitralButton>
 	<NuitralButton primary icon="user" iconPosition="right" disabled>
 		<template #leftSide> Left Side </template>
@@ -30,7 +38,7 @@ const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 		<template #rightSide> Right Side </template>
 	</NuitralButton>
 	<NuitralBox
-		:title="'title'"
+		:title="'Title'"
 		:description="'Description'"
 		primary
 	></NuitralBox>
