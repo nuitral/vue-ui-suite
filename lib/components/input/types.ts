@@ -20,6 +20,6 @@ import { NuitralIconsId } from '@nuitral/icons'
  *   Can be a valid `NuitralIconsId` or `null`.
  */
 export interface NuitralInputProps extends InputProps {
-    modelValue?: string | number
-    icon?: NuitralIconsId | null
+	modelValue?: string | number
+	icon?: NuitralIconsId | null
 }

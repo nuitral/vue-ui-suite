@@ -4,9 +4,11 @@ import {
 	NuitralButton,
 	NuitralBox,
 	NuitralInput,
+	NuitralTab,
+	NuitralTabs,
 	useNuitralTheming,
 } from '../lib'
-import { ref } from 'vue'
+import { ref, shallowRef } from 'vue'
 
 const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	theme: 'nuitral',
@@ -25,9 +27,34 @@ const inputModel = ref('Input test')
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
 
-	<NuitralInput v-model="inputModel" :placeholder="'placeholder'" :icon="'user'"></NuitralInput>
-  <NuitralInput v-model="inputModel" :placeholder="'placeholder'" :icon="'user'" type="password" :icon-position="'right'"></NuitralInput>
-  <NuitralInput v-model="inputModel" :placeholder="'placeholder'" :disabled="true"></NuitralInput>
+	<NuitralTabs :selected="1">
+		<NuitralTab label="Tab A" icon="user"> Content of A </NuitralTab>
+		<NuitralTab label="Tab B" icon="basket" iconPosition="right">
+			Content of B
+		</NuitralTab>
+		<NuitralTab label="Tab C"> Content of C </NuitralTab>
+		<NuitralTab v-for="num in 5" :key="num" :label="'Tab ' + num">
+			{{ num }}
+		</NuitralTab>
+	</NuitralTabs>
+
+	<NuitralInput
+		v-model="inputModel"
+		:placeholder="'placeholder'"
+		:icon="'user'"
+	></NuitralInput>
+	<NuitralInput
+		v-model="inputModel"
+		:placeholder="'placeholder'"
+		:icon="'user'"
+		type="password"
+		:icon-position="'right'"
+	></NuitralInput>
+	<NuitralInput
+		v-model="inputModel"
+		:placeholder="'placeholder'"
+		:disabled="true"
+	></NuitralInput>
 	{{ inputModel }}
 	<NuitralButton accent icon="user"> Button </NuitralButton>
 	<NuitralButton primary icon="user"></NuitralButton>
