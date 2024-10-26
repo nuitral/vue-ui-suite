@@ -1,17 +1,18 @@
 <script lang="ts" setup>
-import { PropType, computed, ref, useSlots } from 'vue'
+import { computed, ref, useSlots, VNode, VNodeChild, isVNode } from 'vue'
+
 import { NuitralClass } from '@nuitral/types'
 import { NuitralTabProps } from '../tab/Tab.vue'
 import { NuitralIcon } from '../index'
 
 export interface NuitralTabsProps {
 	items: NuitralTabProps[]
-	classes?: NuitralClass
-	selected?: number
-	disabled?: boolean
+	classes: NuitralClass
+	selected: number
+	disabled: boolean
 }
-const props = withDefaults(defineProps<NuitralTabsProps>(), {
-	items: [],
+const props = withDefaults(defineProps<Partial<NuitralTabsProps>>(), {
+	items: () => [] as NuitralTabProps[],
 	classes: '',
 	selected: 0,
 	disabled: false,
@@ -44,32 +45,47 @@ const manageItems = (): NuitralTabProps[] => {
 	const nodes = slots.default ? slots.default() : null
 	if (!nodes) return []
 
-	return nodes.reduce((acc: NuitralTabProps[], node: any) => {
-		console.log(node)
-		if (node.type.__name === 'Tab') {
+	return nodes.reduce((acc: NuitralTabProps[], node) => {
+		if (
+			isVNode(node) &&
+			typeof node.type === 'object' &&
+			node.type &&
+			(node.type as any).__name === 'Tab'
+		) {
 			acc.push({
-				...getDefaultValues(node.type.props),
-				...node.props,
+				...getDefaultValues((node.type as any).props),
+				...(node.props || {}),
 				component: node,
+				leftSide: node.children?.leftSide as VNodeChild,
+				rightSide: node.children?.rightSide as VNodeChild,
 			} as NuitralTabProps)
 		} else if (
+			isVNode(node) &&
 			node.children &&
-			node.children.every((child: any) => child.type.__name === 'Tab')
+			Array.isArray(node.children) &&
+			node.children.every(
+				(child: any) => isVNode(child) && (child.type as any).__name === 'Tab'
+			)
 		) {
-			node.children.forEach((child: any) => {
+			const children = node.children as VNode[]
+			children.forEach((child: VNode) => {
 				acc.push({
-					...getDefaultValues(child.type.props),
-					...child.props,
+					...getDefaultValues((child.type as any).props),
+					...(child.props || {}),
 					component: child,
+					leftSide: child.children?.leftSide as VNodeChild,
+					rightSide: child.children?.rightSide as VNodeChild,
 				} as NuitralTabProps)
 			})
 		}
-		console.log(acc)
 		return acc
 	}, [])
 }
 
-const onTabSelection = (selection: { item: TTab; index: number }) => {
+const onTabSelection = (selection: {
+	item: NuitralTabProps
+	index: number
+}) => {
 	indexSelected.value = selection.index
 	emit('onSelection', selection)
 }
@@ -83,6 +99,7 @@ const onTabSelection = (selection: { item: TTab; index: number }) => {
 			:class="[{ 'nuitral-tab-active': indexSelected === index }]"
 			@click="onTabSelection({ item, index })"
 		>
+			<component :is="item.leftSide"></component>
 			<NuitralIcon
 				:icon="item.icon"
 				v-if="item.icon && item.iconPosition === 'left'"
@@ -92,6 +109,7 @@ const onTabSelection = (selection: { item: TTab; index: number }) => {
 				:icon="item.icon"
 				v-if="item.icon && item.iconPosition === 'right'"
 			></NuitralIcon>
+			<component :is="item.rightSide"></component>
 		</div>
 	</div>
 	<template v-for="(item, index) of allItems">

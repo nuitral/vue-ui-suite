@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { NuitralClass, NuitralIconPosition } from '@nuitral/types'
 import { NuitralIconsId } from '@nuitral/icons'
+import { VNode } from 'vue'
 
 export interface NuitralTabProps {
 	label: string
-	component: any
+	component: VNode | null
 	icon: NuitralIconsId | null
 	iconPosition: NuitralIconPosition
 	classes: NuitralClass
 	disabled: boolean
+	leftSide: VNode | null
+	rightSide: VNode | null
 }
 
-const props = withDefaults(defineProps<NuitralTabProps>(), {
+withDefaults(defineProps<Partial<NuitralTabProps>>(), {
 	label: '',
 	component: null,
 	icon: null,
@@ -22,6 +25,8 @@ const props = withDefaults(defineProps<NuitralTabProps>(), {
 </script>
 <template>
 	<div class="nuitral-tab-content" :class="classes">
+		<slot name="leftSide" v-if="false"></slot>
 		<slot></slot>
+		<slot name="rightSide" v-if="false"></slot>
 	</div>
 </template>

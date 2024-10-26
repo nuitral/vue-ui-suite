@@ -27,14 +27,19 @@ const inputModel = ref('Input test')
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
 
-	<NuitralTabs :selected="1">
-		<NuitralTab label="Tab A" icon="user"> Content of A </NuitralTab>
+	<NuitralTabs :selected="0">
+		<NuitralTab label="Tab A" icon="user"
+			><template #leftSide>L</template>
+			<template #rightSide>R</template> Content of A
+		</NuitralTab>
 		<NuitralTab label="Tab B" icon="basket" iconPosition="right">
 			Content of B
 		</NuitralTab>
 		<NuitralTab label="Tab C"> Content of C </NuitralTab>
 		<NuitralTab v-for="num in 5" :key="num" :label="'Tab ' + num">
-			{{ num }}
+			<template #leftSide>Left {{ num }}</template>
+			<template #rightSide>Right {{ num }}</template>
+			Content of {{ num }}
 		</NuitralTab>
 	</NuitralTabs>
 
