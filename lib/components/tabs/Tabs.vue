@@ -24,7 +24,7 @@ const slots = useSlots()
 
 const indexSelected = ref(props.selected)
 
-const allItems = computed(() => manageItems())
+const allItems = computed(() => manageAllItems())
 
 const getDefaultValues = (propDefinitions: Record<string, any>) => {
 	const defaultValues: Record<string, any> = {}
@@ -40,8 +40,7 @@ const getDefaultValues = (propDefinitions: Record<string, any>) => {
 	return defaultValues
 }
 
-const manageItems = (): NuitralTabProps[] => {
-	if (props.items.length) return props.items
+const manageTabs = (): NuitralTabProps[] => {
 	const nodes = slots.default ? slots.default() : null
 	if (!nodes) return []
 
@@ -80,6 +79,29 @@ const manageItems = (): NuitralTabProps[] => {
 		}
 		return acc
 	}, [])
+}
+
+const manageItems = (): NuitralTabProps[] => {
+  const defaultValues: NuitralTabProps = {
+    label: '',
+    component: null,
+    icon: null,
+    iconPosition: 'left',
+    classes: '',
+    disabled: false,
+    leftSide: null,
+    rightSide: null,
+  }
+
+  return props.items.map(item => ({
+    ...defaultValues,
+    ...item,
+  }))
+}
+
+const manageAllItems = (): NuitralTabProps[] => {
+	if (props.items.length) return manageItems()
+	return manageTabs()
 }
 
 const onTabSelection = (selection: {

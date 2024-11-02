@@ -8,7 +8,9 @@ import {
 	NuitralTabs,
 	useNuitralTheming,
 } from '../lib'
-import { ref, shallowRef } from 'vue'
+import { defineAsyncComponent, ref, shallowRef } from 'vue'
+import DemoComponentOne from './demoComponents/DemoComponentOne.vue'
+import DemoComponentTwo from './demoComponents/DemoComponentTwo.vue'
 
 const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	theme: 'nuitral',
@@ -17,6 +19,15 @@ const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 })
 
 const inputModel = ref('Input test')
+
+const tabItems = ref([
+	{
+		label: 'A',
+		icon: 'user',
+		component: DemoComponentOne
+	},
+	{ label: 'B', icon: 'basket', component: DemoComponentTwo },
+])
 </script>
 
 <template>
@@ -26,8 +37,8 @@ const inputModel = ref('Input test')
 	<button @click="manageTheme('nuitral')">Set nuitral theme</button>
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
-
-	<NuitralTabs :selected="0">
+	<NuitralTabs :selected="0" :items="tabItems"></NuitralTabs>
+	<NuitralTabs :selected="1">
 		<NuitralTab label="Tab A" icon="user"
 			><template #leftSide>L</template>
 			<template #rightSide>R</template> Content of A
