@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { NuitralClass, NuitralIconPosition } from '@nuitral/types'
 import { NuitralIconsId } from '@nuitral/icons'
-import { VNode } from 'vue'
+import { VNode, Component } from 'vue'
 
 export interface NuitralTabProps {
 	label: string
-	component: VNode | null
+	component: Component | null ,
 	icon: NuitralIconsId | null
 	iconPosition: NuitralIconPosition
 	classes: NuitralClass
 	disabled: boolean
 	leftSide: VNode | null
 	rightSide: VNode | null
+	[key: string]: any
 }
 
 withDefaults(defineProps<Partial<NuitralTabProps>>(), {
