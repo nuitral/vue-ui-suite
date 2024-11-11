@@ -37,8 +37,8 @@ const tabItems = ref([
 	<button @click="manageTheme('nuitral')">Set nuitral theme</button>
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
-	<NuitralTabs :selected="0" :items="tabItems"></NuitralTabs>
-	<NuitralTabs :selected="1">
+	<NuitralTabs primary :selected="0" :items="tabItems"></NuitralTabs>
+	<NuitralTabs accent :selected="1">
 		<NuitralTab label="Tab A" icon="user"
 			><template #leftSide>L</template>
 			<template #rightSide>R</template> Content of A

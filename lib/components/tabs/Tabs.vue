@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref, useSlots, VNode, VNodeChild, isVNode } from 'vue'
+import {computed, ref, useSlots, VNode, VNodeChild, isVNode, useAttrs} from 'vue'
 
 import { NuitralClass } from '@nuitral/types'
 import { NuitralTabProps } from '../tab/Tab.vue'
@@ -111,9 +111,26 @@ const onTabSelection = (selection: {
 	indexSelected.value = selection.index
 	emit('onSelection', selection)
 }
+import { useColorsAttributesValidator } from '../../composables'
+
+const { isValidAttribute } = useColorsAttributesValidator()
+
+const attrs = useAttrs()
+
+const borderColor = computed(() => {
+  const filteredAttrs: Record<string, any> = {}
+  for (const key in attrs) {
+    if (isValidAttribute(key)) {
+      filteredAttrs[key] = attrs[key]
+    }
+  }
+  return Object.keys(filteredAttrs).map(
+      key => `nuitral-tab-${key}`
+  )
+})
 </script>
 <template>
-	<div class="nuitral-tabs" :class="[classes]">
+	<div class="nuitral-tabs" :class="[classes, borderColor]">
 		<div
 			class="nuitral-tab"
 			v-for="(item, index) of allItems"
@@ -138,40 +155,3 @@ const onTabSelection = (selection: {
 		<component :is="item.component" v-if="index === indexSelected"></component>
 	</template>
 </template>
-
-<style lang="scss">
-.nuitral-tabs {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-
-	.nuitral-tab {
-		height: 40px;
-		display: flex;
-		align-items: center;
-		gap: 4px;
-		padding: 8px 16px;
-		box-sizing: border-box;
-		cursor: pointer;
-		transition: all 0.3s ease-in-out;
-
-		.nuitral-icon {
-			margin-bottom: 2px;
-		}
-
-		&.nuitral-tab-active {
-			border-bottom: 2px solid red;
-		}
-
-		&:not(.nuitral-tab-active) {
-			color: black;
-			border-bottom: 2px solid transparent;
-		}
-	}
-}
-
-.nuitral-tab-content {
-	padding-top: 1rem;
-}
-</style>
