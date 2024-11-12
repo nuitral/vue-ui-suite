@@ -8,10 +8,10 @@ import {
 	NuitralTabs,
 	useNuitralTheming,
 } from '../lib'
-import { ref, defineAsyncComponent } from 'vue'
+import { ref } from 'vue'
 import DemoComponentOne from './demoComponents/DemoComponentOne.vue'
 import DemoComponentTwo from './demoComponents/DemoComponentTwo.vue'
-import { NuitralTabProps } from '../lib/components/tab/Tab.vue'
+import { NuitralTabProps } from '../lib/components/tab/types'
 
 const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	theme: 'nuitral',
@@ -25,9 +25,9 @@ const tabItems = ref<Partial<NuitralTabProps>[]>([
 	{
 		label: 'A',
 		icon: 'user',
-		component: DemoComponentOne
+		component: DemoComponentOne,
 	},
-	{ label: 'B', icon: 'basket', component: DemoComponentTwo },
+	{ label: 'B', icon: 'basket', component: DemoComponentTwo, disabled: true },
 ])
 
 const testButton = () => {
@@ -44,13 +44,20 @@ const testButton = () => {
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
 	<button @click="testButton">test</button>
+
 	<NuitralTabs primary :selected="0" :items="tabItems"></NuitralTabs>
+
 	<NuitralTabs accent :selected="1">
 		<NuitralTab label="Tab A" icon="user"
 			><template #leftSide>L</template>
 			<template #rightSide>R</template> Content of A
 		</NuitralTab>
-		<NuitralTab label="Tab B" icon="basket" iconPosition="right">
+		<NuitralTab
+			label="Tab B"
+			:disabled="true"
+			icon="basket"
+			iconPosition="right"
+		>
 			Content of B
 		</NuitralTab>
 		<NuitralTab label="Tab C"> Content of C </NuitralTab>

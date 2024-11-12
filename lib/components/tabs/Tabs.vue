@@ -1,16 +1,18 @@
 <script lang="ts" setup>
-import {computed, ref, useSlots, VNode, VNodeChild, isVNode, useAttrs} from 'vue'
+import {
+	computed,
+	ref,
+	useSlots,
+	VNode,
+	VNodeChild,
+	isVNode,
+	useAttrs,
+} from 'vue'
 import { useColorsAttributesValidator } from '../../composables'
-import { NuitralClass } from '@nuitral/types'
-import { NuitralTabProps } from '../tab/Tab.vue'
 import { NuitralIcon } from '../index'
+import { NuitralTabsProps } from './types'
+import { NuitralTabProps } from '../tab/types'
 
-export interface NuitralTabsProps {
-	items: Partial<NuitralTabProps>[]
-	classes: NuitralClass
-	selected: number
-	disabled: boolean
-}
 const props = withDefaults(defineProps<Partial<NuitralTabsProps>>(), {
 	items: () => [] as Partial<NuitralTabProps>[],
 	classes: '',
@@ -34,9 +36,7 @@ const borderColor = computed(() => {
 			filteredAttrs[key] = attrs[key]
 		}
 	}
-	return Object.keys(filteredAttrs).map(
-		key => `nuitral-tab-${key}`
-	)
+	return Object.keys(filteredAttrs).map(key => `nuitral-tab-${key}`)
 })
 
 const allItems = computed(() => manageAllItems())
@@ -58,8 +58,8 @@ const getDefaultValues = (
 }
 
 const manageTabs = (): NuitralTabProps[] => {
-	const nodes = slots.default ? slots.default() : null;
-	if (!nodes) return [];
+	const nodes = slots.default ? slots.default() : null
+	if (!nodes) return []
 
 	return nodes.reduce((acc: NuitralTabProps[], node) => {
 		if (
@@ -68,15 +68,22 @@ const manageTabs = (): NuitralTabProps[] => {
 			node.type &&
 			(node.type as any).__name === 'Tab'
 		) {
-			const children = node.children && typeof node.children === 'object' ? node.children : {};
+			const children =
+				node.children && typeof node.children === 'object' ? node.children : {}
 
 			acc.push({
 				...(getDefaultValues((node.type as any).props) as NuitralTabProps),
 				...(node.props || {}),
 				component: node,
-				leftSide: 'leftSide' in children ? (children.leftSide as VNodeChild | string) : null,
-				rightSide: 'rightSide' in children ? (children.rightSide as VNodeChild | string) : null,
-			} as NuitralTabProps);
+				leftSide:
+					'leftSide' in children
+						? (children.leftSide as VNodeChild | string)
+						: null,
+				rightSide:
+					'rightSide' in children
+						? (children.rightSide as VNodeChild | string)
+						: null,
+			} as NuitralTabProps)
 		} else if (
 			isVNode(node) &&
 			node.children &&
@@ -85,23 +92,31 @@ const manageTabs = (): NuitralTabProps[] => {
 				(child: any) => isVNode(child) && (child.type as any).__name === 'Tab'
 			)
 		) {
-			const children = node.children as VNode[];
+			const children = node.children as VNode[]
 			children.forEach((child: VNode) => {
-				const childChildren = child.children && typeof child.children === 'object' ? child.children : {};
+				const childChildren =
+					child.children && typeof child.children === 'object'
+						? child.children
+						: {}
 
 				acc.push({
 					...(getDefaultValues((child.type as any).props) as NuitralTabProps),
 					...(child.props || {}),
 					component: child,
-					leftSide: 'leftSide' in childChildren ? (childChildren.leftSide as VNodeChild | string) : null,
-					rightSide: 'rightSide' in childChildren ? (childChildren.rightSide as VNodeChild | string) : null,
-				} as NuitralTabProps);
-			});
+					leftSide:
+						'leftSide' in childChildren
+							? (childChildren.leftSide as VNodeChild | string)
+							: null,
+					rightSide:
+						'rightSide' in childChildren
+							? (childChildren.rightSide as VNodeChild | string)
+							: null,
+				} as NuitralTabProps)
+			})
 		}
-		return acc;
-	}, []);
-};
-
+		return acc
+	}, [])
+}
 
 const manageItems = (): NuitralTabProps[] => {
 	const defaultValues: NuitralTabProps = {
@@ -133,7 +148,6 @@ const onTabSelection = (selection: {
 	indexSelected.value = selection.index
 	emit('onSelection', selection)
 }
-
 </script>
 <template>
 	<div class="nuitral-tabs" v-bind="attrs" :class="[classes, borderColor]">
@@ -141,7 +155,10 @@ const onTabSelection = (selection: {
 			class="nuitral-tab"
 			v-for="(item, index) of allItems"
 			:key="'tab' + index"
-			:class="[{ 'nuitral-tab-active': indexSelected === index }]"
+			:class="[
+				{ 'nuitral-tab-active': indexSelected === index },
+				{ disabled: item.disabled },
+			]"
 			@click="onTabSelection({ item, index })"
 		>
 			<component :is="item.leftSide"></component>
