@@ -28,7 +28,7 @@ const tabItems = ref<Partial<NuitralTabProps>[]>([
 		icon: 'user',
 		component: DemoComponentOne,
 	},
-	{ label: 'B', icon: 'basket', component: DemoComponentTwo },
+	{ label: 'B', icon: 'basket', component: DemoComponentTwo},
 	{ label: 'C', icon: 'basket', component: null, disabled: true },
 ])
 
