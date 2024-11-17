@@ -11,9 +11,7 @@ withDefaults(defineProps<Partial<NuitralTabProps>>(), {
 })
 </script>
 <template>
-	<div class="nuitral-tab-content" :class="classes">
 		<slot name="leftSide" v-if="false"></slot>
 		<slot></slot>
 		<slot name="rightSide" v-if="false"></slot>
-	</div>
 </template>

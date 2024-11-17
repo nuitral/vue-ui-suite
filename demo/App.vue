@@ -17,6 +17,7 @@ const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	theme: 'nuitral',
 	darkMode: false,
 	rootId: 'demo-app',
+	saveSettings: true
 })
 
 const inputModel = ref('Input test')
@@ -27,7 +28,8 @@ const tabItems = ref<Partial<NuitralTabProps>[]>([
 		icon: 'user',
 		component: DemoComponentOne,
 	},
-	{ label: 'B', icon: 'basket', component: DemoComponentTwo, disabled: true },
+	{ label: 'B', icon: 'basket', component: DemoComponentTwo },
+	{ label: 'C', icon: 'basket', component: null, disabled: true },
 ])
 
 const testButton = () => {
@@ -45,9 +47,9 @@ const testButton = () => {
 	<h1>nuitral Vue UI Suite</h1>
 	<button @click="testButton">test</button>
 
-	<NuitralTabs primary :selected="0" :items="tabItems"></NuitralTabs>
+	<NuitralTabs primary :selected="0" :items="tabItems" @onSelection="($event) => {console.log($event )}"></NuitralTabs>
 
-	<NuitralTabs accent :selected="1">
+	<NuitralTabs accent :selected="1" @onSelection="($event) => {console.log($event )}">
 		<NuitralTab label="Tab A" icon="user"
 			><template #leftSide>L</template>
 			<template #rightSide>R</template> Content of A
@@ -66,6 +68,7 @@ const testButton = () => {
 			<template #rightSide>Right {{ num }}</template>
 			Content of {{ num }}
 		</NuitralTab>
+		<NuitralTab label="Component Two"> <DemoComponentTwo/> </NuitralTab>
 	</NuitralTabs>
 
 	<NuitralInput
