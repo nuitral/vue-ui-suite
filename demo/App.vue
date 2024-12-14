@@ -6,6 +6,8 @@ import {
 	NuitralInput,
 	NuitralTab,
 	NuitralTabs,
+	NuitralOption,
+	NuitralSelect,
 	useNuitralTheming,
 } from '../lib'
 import { ref } from 'vue'
@@ -17,7 +19,7 @@ const { isDarkMode, manageDarkMode, manageTheme } = useNuitralTheming({
 	theme: 'nuitral',
 	darkMode: false,
 	rootId: 'demo-app',
-	saveSettings: true
+	saveSettings: true,
 })
 
 const inputModel = ref('Input test')
@@ -28,7 +30,7 @@ const tabItems = ref<Partial<NuitralTabProps>[]>([
 		icon: 'user',
 		component: DemoComponentOne,
 	},
-	{ label: 'B', icon: 'basket', component: DemoComponentTwo},
+	{ label: 'B', icon: 'basket', component: DemoComponentTwo },
 	{ label: 'C', icon: 'basket', component: null, disabled: true },
 ])
 
@@ -45,11 +47,39 @@ const testButton = () => {
 	<button @click="manageTheme('nuitral')">Set nuitral theme</button>
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
+
+	<div class="divider" />
+	<h3>Select</h3>
+
+	<NuitralSelect>
+		<NuitralOption></NuitralOption>
+	</NuitralSelect>
+
+	<div class="divider" />
+	<h3>Tabs</h3>
+
 	<button @click="testButton">test</button>
 
-	<NuitralTabs primary :selected="0" :items="tabItems" @onSelection="($event) => {console.log($event )}"></NuitralTabs>
+	<NuitralTabs
+		primary
+		:selected="0"
+		:items="tabItems"
+		@onSelection="
+			$event => {
+				console.log($event)
+			}
+		"
+	></NuitralTabs>
 
-	<NuitralTabs accent :selected="1" @onSelection="($event) => {console.log($event )}">
+	<NuitralTabs
+		accent
+		:selected="1"
+		@onSelection="
+			$event => {
+				console.log($event)
+			}
+		"
+	>
 		<NuitralTab label="Tab A" icon="user"
 			><template #leftSide>L</template>
 			<template #rightSide>R</template> Content of A
@@ -68,9 +98,10 @@ const testButton = () => {
 			<template #rightSide>Right {{ num }}</template>
 			Content of {{ num }}
 		</NuitralTab>
-		<NuitralTab label="Component Two"> <DemoComponentTwo/> </NuitralTab>
+		<NuitralTab label="Component Two"> <DemoComponentTwo /> </NuitralTab>
 	</NuitralTabs>
-
+	<div class="divider" />
+	<h3>Input</h3>
 	<NuitralInput
 		v-model="inputModel"
 		:placeholder="'placeholder'"
@@ -89,6 +120,9 @@ const testButton = () => {
 		:disabled="true"
 	></NuitralInput>
 	{{ inputModel }}
+
+	<div class="divider" />
+	<h3>Button</h3>
 	<NuitralButton accent icon="user"> Button </NuitralButton>
 	<NuitralButton primary icon="user"></NuitralButton>
 	<NuitralButton primary icon="user" iconPosition="right" disabled>
@@ -97,10 +131,15 @@ const testButton = () => {
 	<NuitralButton primary icon="user" iconPosition="right" disabled>
 		<template #rightSide> Right Side </template>
 	</NuitralButton>
+
+	<div class="divider" />
+	<h3>Box</h3>
 	<NuitralBox
 		:title="'Title'"
 		:description="'Description'"
 		primary
 	></NuitralBox>
+	<div class="divider" />
+	<h3>Icon</h3>
 	<NuitralIcon :icon="'user'"></NuitralIcon>
 </template>
