@@ -34,6 +34,15 @@ const tabItems = ref<Partial<NuitralTabProps>[]>([
 	{ label: 'C', icon: 'basket', component: null, disabled: true },
 ])
 
+const selectItems: any = [
+	{ option: 'A', value: 'A' },
+	{ option: 'B' },
+	{ option: 'C', disabled: true },
+	{ option: 'D' },
+	{ option: 'E' },
+	{ option: 'F' },
+]
+
 const testButton = () => {
 	tabItems.value[1].component = DemoComponentOne
 	tabItems.value[1].label = 'Test ref Tab'
@@ -51,8 +60,12 @@ const testButton = () => {
 	<div class="divider" />
 	<h3>Select</h3>
 
+	<NuitralSelect :items="selectItems" />
+
 	<NuitralSelect>
-		<NuitralOption></NuitralOption>
+		<NuitralOption>A</NuitralOption>
+		<NuitralOption>B</NuitralOption>
+
 	</NuitralSelect>
 
 	<div class="divider" />
@@ -81,17 +94,9 @@ const testButton = () => {
 		"
 	>
 		<NuitralTab label="Tab A" icon="user"
-			><template #leftSide>L</template>
-			<template #rightSide>R</template> Content of A
+			><template #leftSide>L</template> <template #rightSide>R</template> Content of A
 		</NuitralTab>
-		<NuitralTab
-			label="Tab B"
-			:disabled="true"
-			icon="basket"
-			iconPosition="right"
-		>
-			Content of B
-		</NuitralTab>
+		<NuitralTab label="Tab B" :disabled="true" icon="basket" iconPosition="right"> Content of B </NuitralTab>
 		<NuitralTab label="Tab C"> Content of C </NuitralTab>
 		<NuitralTab v-for="num in 5" :key="num" :label="'Tab ' + num">
 			<template #leftSide>Left {{ num }}</template>
@@ -102,11 +107,7 @@ const testButton = () => {
 	</NuitralTabs>
 	<div class="divider" />
 	<h3>Input</h3>
-	<NuitralInput
-		v-model="inputModel"
-		:placeholder="'placeholder'"
-		:icon="'user'"
-	></NuitralInput>
+	<NuitralInput v-model="inputModel" :placeholder="'placeholder'" :icon="'user'"></NuitralInput>
 	<NuitralInput
 		v-model="inputModel"
 		:placeholder="'placeholder'"
@@ -114,11 +115,7 @@ const testButton = () => {
 		type="password"
 		:icon-position="'right'"
 	></NuitralInput>
-	<NuitralInput
-		v-model="inputModel"
-		:placeholder="'placeholder'"
-		:disabled="true"
-	></NuitralInput>
+	<NuitralInput v-model="inputModel" :placeholder="'placeholder'" :disabled="true"></NuitralInput>
 	{{ inputModel }}
 
 	<div class="divider" />
@@ -134,11 +131,7 @@ const testButton = () => {
 
 	<div class="divider" />
 	<h3>Box</h3>
-	<NuitralBox
-		:title="'Title'"
-		:description="'Description'"
-		primary
-	></NuitralBox>
+	<NuitralBox :title="'Title'" :description="'Description'" primary></NuitralBox>
 	<div class="divider" />
 	<h3>Icon</h3>
 	<NuitralIcon :icon="'user'"></NuitralIcon>

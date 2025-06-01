@@ -16,9 +16,7 @@ const backgroundColor = computed(() => {
 			filteredAttrs[key] = attrs[key]
 		}
 	}
-	return Object.keys(filteredAttrs).map(
-		key => `nuitral-button-background-${key}`
-	)
+	return Object.keys(filteredAttrs).map(key => `nuitral-button-background-${key}`)
 })
 
 withDefaults(defineProps<NuitralButtonProps>(), {
@@ -30,12 +28,7 @@ withDefaults(defineProps<NuitralButtonProps>(), {
 })
 </script>
 <template>
-	<button
-		class="nuitral-button"
-		:class="[classes, backgroundColor, { disabled }]"
-		:type="type"
-		:disabled="disabled"
-	>
+	<button class="nuitral-button" :class="[classes, backgroundColor, { disabled }]" :type="type" :disabled="disabled">
 		<slot name="leftSide"></slot>
 		<NuitralIcon :icon="icon" v-if="icon && iconPosition === 'left'" />
 		<slot></slot>

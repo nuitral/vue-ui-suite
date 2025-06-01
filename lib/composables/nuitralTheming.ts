@@ -38,9 +38,7 @@ const useNuitralTheming = ({
 			const modeClass = isDarkMode.value ? darkModeName : lightModeName
 			appRef.value.setAttribute('nuitral-theme', themeName.value)
 			appRef.value.classList.add(modeClass)
-			appRef.value.classList.remove(
-				isDarkMode.value ? lightModeName : darkModeName
-			)
+			appRef.value.classList.remove(isDarkMode.value ? lightModeName : darkModeName)
 		}
 	}
 
@@ -61,7 +59,7 @@ const useNuitralTheming = ({
 		applyModeAndTheme()
 	})
 
-	return { manageDarkMode: toggleMode, isDarkMode, manageTheme, themeName}
+	return { manageDarkMode: toggleMode, isDarkMode, manageTheme, themeName }
 }
 
 export default useNuitralTheming
