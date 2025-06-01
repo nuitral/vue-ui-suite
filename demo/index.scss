@@ -1,4 +1,9 @@
+/*
 @use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
+*/
+@use '../../theming/lib/scss/variables' with ($border-radius-molecules: 24px 24px);
+@use '../../theming/lib/scss/_index.scss' as nuitral;
+
 @include nuitral.generate-theme(nuitral.$light-mode, nuitral.$dark-mode);
 
 $primary-light-scale: nuitral.generate-color-scale(#ff0054);
