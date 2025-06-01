@@ -6,6 +6,7 @@ import {
 	NuitralInput,
 	NuitralTab,
 	NuitralTabs,
+	NuitralCard,
 	useNuitralTheming,
 } from '../lib'
 import { ref } from 'vue'
@@ -45,7 +46,13 @@ const testButton = () => {
 	<button @click="manageTheme('nuitral')">Set nuitral theme</button>
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
-	<button @click="testButton">test</button>
+	<NuitralCard>
+		<template #header>HEADER</template>
+		Body
+		<template #footer>FOOTER</template>
+	</NuitralCard>
+	<br>
+	<button @click="testButton">test tab</button>
 
 	<NuitralTabs primary :selected="0" :items="tabItems" @onSelection="($event) => {console.log($event )}"></NuitralTabs>
 
