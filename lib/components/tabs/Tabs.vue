@@ -175,13 +175,12 @@ const onTabSelection = (selection: {
 		</div>
 	</div>
 	<template v-for="(item, index) of allItems">
-		<div class="nuitral-tab-content" :class="item.classes" v-if="index === indexSelected">
-
-		<component
-			:is="{ ...item.component }"
-
-		></component>
+		<div
+			class="nuitral-tab-content"
+			:class="item.classes"
+			v-if="index === indexSelected"
+		>
+			<component :is="{ ...item.component }"></component>
 		</div>
-
 	</template>
 </template>

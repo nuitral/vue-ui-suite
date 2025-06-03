@@ -61,7 +61,7 @@ const useNuitralTheming = ({
 		applyModeAndTheme()
 	})
 
-	return { manageDarkMode: toggleMode, isDarkMode, manageTheme, themeName}
+	return { manageDarkMode: toggleMode, isDarkMode, manageTheme, themeName }
 }
 
 export default useNuitralTheming
