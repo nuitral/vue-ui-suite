@@ -8,6 +8,7 @@ const colorsAttributesValidator = () => {
 		'warning',
 		'info',
 		'neutral',
+		'background',
 	]
 	const scales = ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 
@@ -16,6 +17,10 @@ const colorsAttributesValidator = () => {
 		validAttributes.push(`${color}`)
 		scales.forEach(scale => {
 			validAttributes.push(`${color}-${scale}`)
+		})
+		validAttributes.push(`border-${color}`)
+		scales.forEach(scale => {
+			validAttributes.push(`border-${color}-${scale}`)
 		})
 	})
 

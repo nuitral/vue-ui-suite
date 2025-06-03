@@ -46,7 +46,7 @@ const testButton = () => {
 	<button @click="manageTheme('nuitral')">Set nuitral theme</button>
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
-	<NuitralCard>
+	<NuitralCard hasShadow>
 		<template #header>HEADER</template>
 		Body
 		<template #footer>FOOTER</template>
