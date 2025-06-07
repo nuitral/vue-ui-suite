@@ -47,13 +47,13 @@ const testButton = () => {
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
 
-	<NuitralCard background-400 border-primary>
+	<NuitralCard background-400 border-accent>
 		<template #header>Header</template>
 		Body
 		<template #footer>Footer</template>
 	</NuitralCard>
 	<br />
-	<NuitralCard background-800 hasShadow>
+	<NuitralCard background-100 hasShadow>
 		<template #header>Header</template>
 		Body
 		<template #footer>Footer</template>
