@@ -30,6 +30,14 @@ export default defineConfig(({ command }) => {
 				],
 			},
 		},
-		plugins: [vue()],
+		plugins: [vue({
+			template: {
+				compilerOptions: {
+					isCustomElement: (tag) => tag.startsWith('nuitral-')
+				}
+			}
+		})],
 	}
 })
+
+

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NuitralIcon } from '../index'
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { NuitralInputProps } from './types'
 
 const emit = defineEmits(['update:modelValue'])
@@ -15,25 +15,47 @@ const props = withDefaults(defineProps<NuitralInputProps>(), {
 	classes: '',
 })
 
-const model = computed({
-	get: () => props.modelValue,
-	set: value => {
-		emit('update:modelValue', value)
-	},
+
+const inputRef = ref<any>(null)
+
+const computedClasses = () =>
+	`${props.classes} ${props.disabled ? 'disabled' : ''}`.trim()
+
+const handleValueChange = (e: CustomEvent) => {
+	emit('update:modelValue', e.detail.value)
+}
+
+onMounted(() => {
+	if (inputRef.value) {
+		inputRef.value.addEventListener('value-change', handleValueChange)
+	}
 })
+
+onBeforeUnmount(() => {
+	if (inputRef.value) {
+		inputRef.value.removeEventListener('value-change', handleValueChange)
+	}
+})
+
+watch(
+	() => props.modelValue,
+	newVal => {
+		if (inputRef.value && inputRef.value.value !== newVal) {
+			inputRef.value.value = newVal
+		}
+	}
+)
 </script>
+
 <template>
-	<div
-		class="nuitral-input nuitral-input-text-color"
-		:class="[classes, { disabled }]"
-	>
-		<NuitralIcon :icon="icon" v-if="icon && iconPosition === 'left'" />
-		<input
-			v-model="model"
-			:disabled="disabled"
-			:placeholder="placeholder"
-			:type="type"
-		/>
-		<NuitralIcon :icon="icon" v-if="icon && iconPosition === 'right'" />
-	</div>
+	<nuitral-core-input
+		ref="inputRef"
+		:value="modelValue"
+		:type="props.type"
+		:icon="props.icon"
+		:iconposition="props.iconPosition"
+		:placeholder="props.placeholder"
+		:disabled="props.disabled"
+		:classes="computedClasses()"
+	/>
 </template>
