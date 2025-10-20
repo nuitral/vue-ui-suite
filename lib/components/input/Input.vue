@@ -51,11 +51,11 @@ watch(
 	<nuitral-core-input
 		ref="inputRef"
 		:value="modelValue"
-		:type="props.type"
-		:icon="props.icon"
-		:iconposition="props.iconPosition"
-		:placeholder="props.placeholder"
-		:disabled="props.disabled"
+		:type="type"
+		:icon="icon"
+		:iconposition="iconPosition"
+		:placeholder="placeholder"
+		:disabled="disabled"
 		:classes="computedClasses()"
 	/>
 </template>

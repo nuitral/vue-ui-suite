@@ -59,7 +59,7 @@ const testButton = () => {
 		<template #footer>Footer</template>
 	</NuitralCard>
 	<br />
-	<NuitralCard hasShadow>
+	<NuitralCard background-400 border-primary>
 		<template #header>Header</template>
 		Body
 		<template #footer>Footer</template>

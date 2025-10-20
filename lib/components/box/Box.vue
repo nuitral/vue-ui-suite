@@ -18,7 +18,7 @@ const backgroundColor = computed(() => {
 			filteredAttrs[key] = attrs[key]
 		}
 	}
-	return Object.keys(filteredAttrs).map(key => `nuitral-box-background-${key}`)
+	return Object.keys(filteredAttrs).map(key => `nuitral-box-${key}`)
 })
 </script>
 
