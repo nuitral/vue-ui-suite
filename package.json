@@ -1,6 +1,6 @@
 {
 	"name": "@nuitral/vue-ui-suite",
-	"version": "0.0.1-alpha.8",
+	"version": "0.0.1-alpha.9",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -16,7 +16,13 @@
 		"preview": "vite preview",
 		"format": "prettier --write ."
 	},
-	"description": "nuitral Vue UI Suite",
+	"keywords": [
+		"nuitral",
+		"UI",
+		"Vue",
+		"suite"
+	],
+	"description": "nuitral Vue UI suite",
 	"author": "Nicola Centonze",
 	"license": "MIT",
 	"repository": {
@@ -27,7 +33,7 @@
 	"dependencies": {
 		"@nuitral/core": "^0.0.1-alpha.1",
 		"@nuitral/icons": "^0.0.1-alpha.2",
-		"@nuitral/theming": "^0.0.1-alpha.12",
+		"@nuitral/theming": "^0.0.1-alpha.13",
 		"@nuitral/types": "^0.0.1-alpha.8",
 		"vue": "^3.5.16"
 	},

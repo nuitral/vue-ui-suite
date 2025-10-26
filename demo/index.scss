@@ -1,9 +1,18 @@
 
-@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
+//@use '@nuitral/theming/dist/scss/variables/_index.scss' with (
+//	$primary-light: red,
+//	$primary-dark: blue,
+//	$grid-columns: 12
+//);
 //@use '../../theming/lib/scss/variables' with (
-//	$border-radius-molecules: 1rem 1rem
+//	$primary-light: red,
+//	$primary-dark: blue,
+//	$grid-columns: 12
 //);
 //@use '../../theming/lib/scss/_index.scss' as nuitral;
+
+@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
+
 
 @include nuitral.generate-theme(nuitral.$light-mode, nuitral.$dark-mode);
 

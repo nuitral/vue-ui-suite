@@ -46,6 +46,64 @@ const testButton = () => {
 	<button @click="manageTheme('nuitral')">Set nuitral theme</button>
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
+	layout
+	<div class="layout-flex mb-4">
+		<div class="col-1 nuitral-background-primary-300">1</div>
+		<div class="col-2 nuitral-background-primary-400">2</div>
+		<div class="col-3 nuitral-background-primary-500">3</div>
+		<div class="col-6 nuitral-background-primary-600">6</div>
+	</div>
+
+	<div class="layout-flex mb-4">
+		<div class="col nuitral-background-secondary-300">col</div>
+		<div class="col nuitral-background-secondary-400">col</div>
+		<div class="col-auto nuitral-background-secondary-500">col-auto</div>
+	</div>
+
+	<div class="layout-flex mb-4">
+		<div class="col-auto nuitral-background-secondary-300">col-auto</div>
+		<div class="col-auto nuitral-background-secondary-500">col-auto</div>
+	</div>
+
+	<div class="layout-flex mb-4">
+		<div class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-300">
+			mobile-col-12 tablet-col-6 laptop-col-3
+		</div>
+		<div class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-400">
+			mobile-col-12 tablet-col-6 laptop-col-3
+		</div>
+		<div class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-500">
+			mobile-col-12 tablet-col-6 laptop-col-3
+		</div>
+		<div class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-600">
+			mobile-col-12 tablet-col-6 laptop-col-3
+		</div>
+	</div>
+
+	<div class="layout-flex mb-4">
+		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-300">
+			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+		</div>
+		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-500">
+			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+		</div>
+		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-700">
+			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+		</div>
+		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+		</div>
+		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+		</div>
+		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+		</div>
+	</div>
+
+
+
+
 
 	<NuitralCard background-400 border-accent>
 		<template #header>Header</template>
