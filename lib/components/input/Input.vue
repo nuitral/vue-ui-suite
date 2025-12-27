@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { NuitralIcon } from '../index'
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { NuitralInputProps } from './types'
 
 const emit = defineEmits(['update:modelValue'])

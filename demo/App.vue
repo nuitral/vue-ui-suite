@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import {
-	NuitralIcon,
-	NuitralButton,
 	NuitralBox,
+	NuitralButton,
+	NuitralCard,
+	NuitralIcon,
 	NuitralInput,
 	NuitralTab,
 	NuitralTabs,
-	NuitralCard,
+	NuitralChip,
 	useNuitralTheming,
 } from '../lib'
 import { ref } from 'vue'
@@ -66,44 +67,60 @@ const testButton = () => {
 	</div>
 
 	<div class="layout-flex mb-4">
-		<div class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-300">
+		<div
+			class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-300"
+		>
 			mobile-col-12 tablet-col-6 laptop-col-3
 		</div>
-		<div class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-400">
+		<div
+			class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-400"
+		>
 			mobile-col-12 tablet-col-6 laptop-col-3
 		</div>
-		<div class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-500">
+		<div
+			class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-500"
+		>
 			mobile-col-12 tablet-col-6 laptop-col-3
 		</div>
-		<div class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-600">
+		<div
+			class="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-600"
+		>
 			mobile-col-12 tablet-col-6 laptop-col-3
 		</div>
 	</div>
 
 	<div class="layout-flex mb-4">
-		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-300">
+		<div
+			class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-300"
+		>
 			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
 		</div>
-		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-500">
+		<div
+			class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-500"
+		>
 			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
 		</div>
-		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-700">
+		<div
+			class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-700"
+		>
 			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
 		</div>
-		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+		<div
+			class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900"
+		>
 			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
 		</div>
-		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+		<div
+			class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900"
+		>
 			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
 		</div>
-		<div class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+		<div
+			class="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900"
+		>
 			xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
 		</div>
 	</div>
-
-
-
-
 
 	<NuitralCard background-400 border-accent>
 		<template #header>Header</template>
@@ -203,4 +220,6 @@ const testButton = () => {
 	></NuitralBox>
 	<br />
 	<NuitralIcon :icon="'user'"></NuitralIcon>
+	<br>
+	<NuitralChip>Chip</NuitralChip>
 </template>
