@@ -47,6 +47,53 @@ const testButton = () => {
 	<button @click="manageTheme('nuitral')">Set nuitral theme</button>
 	<button @click="manageTheme('pop')">Set pop theme</button>
 	<h1>nuitral Vue UI Suite</h1>
+
+	<br />
+	<div class="flex gap-2">
+		<NuitralChip primary icon="basket">Chip Primary</NuitralChip>
+		<NuitralChip secondary icon="basket">Chip Secondary</NuitralChip>
+		<NuitralChip accent>Chip accent</NuitralChip>
+		<NuitralChip error>Chip error</NuitralChip>
+		<NuitralChip success>Chip Success</NuitralChip>
+		<NuitralChip warning>Chip warning</NuitralChip>
+		<NuitralChip info>Chip info</NuitralChip>
+		<NuitralChip neutral>Chip neutral</NuitralChip>
+		<NuitralChip background>Chip background</NuitralChip>
+		<NuitralChip surface>Chip surface</NuitralChip>
+	</div>
+
+	<div class="mb-2"></div>
+	<div class="flex">
+		<NuitralChip primary-gloss icon="basket">Chip Primary</NuitralChip>
+		<NuitralChip secondary-gloss icon="basket" icon-position="right"
+			>Chip Secondary</NuitralChip
+		>
+		<NuitralChip accent-gloss>Chip accent</NuitralChip>
+		<NuitralChip error-gloss>Chip error</NuitralChip>
+		<NuitralChip success-gloss>Chip Success</NuitralChip>
+		<NuitralChip warning-gloss>Chip warning</NuitralChip>
+		<NuitralChip info-gloss>Chip info</NuitralChip>
+		<NuitralChip neutral-gloss>Chip neutral</NuitralChip>
+		<NuitralChip background-gloss>Chip background</NuitralChip>
+		<NuitralChip surface-gloss>Chip surface</NuitralChip>
+	</div>
+	<div class="mb-2"></div>
+	<div class="flex">
+		<NuitralChip primary-outline icon="basket">Chip Primary</NuitralChip>
+		<NuitralChip secondary-outline icon="basket" icon-position="right"
+			>Chip Secondary</NuitralChip
+		>
+		<NuitralChip accent-outline>Chip accent</NuitralChip>
+		<NuitralChip error-outline>Chip error</NuitralChip>
+		<NuitralChip success-outline>Chip Success</NuitralChip>
+		<NuitralChip warning-outline>Chip warning</NuitralChip>
+		<NuitralChip info-outline>Chip info</NuitralChip>
+		<NuitralChip neutral-outline>Chip neutral</NuitralChip>
+		<NuitralChip background-outline>Chip background</NuitralChip>
+		<NuitralChip surface-outline>Chip surface</NuitralChip>
+	</div>
+	<div class="mb-2"></div>
+
 	layout
 	<div class="layout-flex mb-4">
 		<div class="col-1 nuitral-background-primary-300">1</div>
@@ -186,23 +233,26 @@ const testButton = () => {
 		</NuitralTab>
 	</NuitralTabs>
 	<br />
-	<NuitralInput
-		v-model="inputModel"
-		:placeholder="'placeholder'"
-		:icon="'user'"
-	></NuitralInput>
-	<NuitralInput
-		v-model="inputModel"
-		:placeholder="'placeholder'"
-		:icon="'user'"
-		type="password"
-		:icon-position="'right'"
-	></NuitralInput>
-	<NuitralInput
-		v-model="inputModel"
-		:placeholder="'placeholder'"
-		:disabled="true"
-	></NuitralInput>
+	<div class="flex">
+		<NuitralInput
+			v-model="inputModel"
+			:placeholder="'placeholder'"
+			:icon="'user'"
+		></NuitralInput>
+		<NuitralInput
+			v-model="inputModel"
+			:placeholder="'placeholder'"
+			:icon="'user'"
+			type="password"
+			:icon-position="'right'"
+		></NuitralInput>
+		<NuitralInput
+			v-model="inputModel"
+			:placeholder="'placeholder'"
+			:disabled="true"
+		></NuitralInput>
+	</div>
+
 	<br />
 	<NuitralButton accent icon="user"> Button</NuitralButton>
 	<NuitralButton primary icon="user"></NuitralButton>
@@ -220,6 +270,5 @@ const testButton = () => {
 	></NuitralBox>
 	<br />
 	<NuitralIcon :icon="'user'"></NuitralIcon>
-	<br>
-	<NuitralChip>Chip</NuitralChip>
+	<br />
 </template>

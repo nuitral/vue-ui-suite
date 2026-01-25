@@ -14,8 +14,7 @@ const backgroundColor = computed(() => {
 			filteredAttrs[key] = attrs[key]
 		}
 	}
-	if (!Object.keys(filteredAttrs).length)
-		return 'nuitral-card-background'
+	if (!Object.keys(filteredAttrs).length) return 'nuitral-card-background'
 	return Object.keys(filteredAttrs).map(key => `nuitral-card-${key}`)
 })
 

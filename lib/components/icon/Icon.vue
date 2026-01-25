@@ -8,7 +8,6 @@ defineProps({
 		default: '',
 	},
 })
-
 </script>
 <template>
 	<nuitral-core-icon :icon="icon"></nuitral-core-icon>

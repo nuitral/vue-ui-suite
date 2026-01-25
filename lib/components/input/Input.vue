@@ -14,7 +14,6 @@ const props = withDefaults(defineProps<NuitralInputProps>(), {
 	classes: '',
 })
 
-
 const inputRef = ref<any>(null)
 
 const computedClasses = () =>

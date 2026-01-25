@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import { NuitralIconPosition, NuitralClass } from '@nuitral/types'
 import { useColorsAttributesValidator } from '../../composables'
 import { computed, useAttrs } from 'vue'
-import { NuitralIconsId } from '@nuitral/icons'
+import { NuitralChipProps } from './types'
 
-interface NuitralChipProps {
-	icon?: NuitralIconsId | null
-	iconPosition?: NuitralIconPosition
-	classes: NuitralClass
-}
-
-withDefaults(defineProps<NuitralChipProps>(), {
+const props = withDefaults(defineProps<NuitralChipProps>(), {
 	icon: null,
 	iconPosition: 'left',
 	classes: '',
@@ -28,10 +21,18 @@ const backgroundColor = computed(() => {
 	}
 	return Object.keys(filteredAttrs).map(key => `nuitral-chip-${key}`)
 })
+
+const computedClasses = computed(
+	() => `${props.classes} ${backgroundColor.value}`
+)
 </script>
 
 <template>
-	<div class="nuitral-chip" :class="[classes, backgroundColor]">
-		<slot></slot>
-	</div>
+	<nuitral-core-chip
+		:icon="icon"
+		:iconPosition="iconPosition"
+		:classes="computedClasses"
+	>
+		<div slot="default"><slot></slot></div>
+	</nuitral-core-chip>
 </template>

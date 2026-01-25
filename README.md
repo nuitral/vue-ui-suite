@@ -6,10 +6,32 @@
   </picture>
 </p>
 
-
 <p><b>nuitral Vue UI suite</b> provides a complete and native UI component suite for Vue projects.</p>
 
-<p><b>Status:</b> This project is currently in <b>alpha version</b>.</p>
+<p><b>Status:</b> This project is currently in <b>beta version</b>.</p>
+
+---
+
+### Progress status
+
+| Status | Module / Component | Description      |
+| ------ | ------------------ | ---------------- |
+| ✅     | `NuitralBox`       | Box component    |
+| ✅     | `NuitralButton`    | Button component |
+| 🚧     | `NuitralCard`      | Card component   |
+| 🚧     | `NuitralChip`      | Chip component   |
+| ✅     | `NuitralIcon`      | Icon component   |
+| ✅     | `NuitralInput`     | Input component  |
+| 🕒     | `NuitralList`      | List component   |
+| 🕒     | `NuitralSelect`    | Select component |
+| ✅     | `NuitralTab`       | Tab component    |
+| ✅     | `NuitralTabs`      | Tabs component   |
+
+Legend:
+
+- ✅ = completed
+- 🚧 = in progress
+- 🕒 = planned
 
 ---
 
@@ -25,4 +47,4 @@ Explore the suite → https://nuitral.github.io
 
 This project is licensed under the [MIT License](https://github.com/nuitral/vue-ui-suite/blob/main/LICENSE).
 
-Copyright (c) 2025 **Nicola Centonze**
+Copyright (c) 2026 **Nicola Centonze**
