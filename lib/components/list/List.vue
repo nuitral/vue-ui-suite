@@ -37,12 +37,11 @@ const slots = useSlots()
 
 	&.horizontal {
 		flex-direction: row;
-		height: 100%;
 	}
 
 	&.vertical {
 		flex-direction: column;
-		width: 100%;
+		height: 100%;
 	}
 
 	.start,

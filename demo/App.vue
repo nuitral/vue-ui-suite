@@ -56,9 +56,18 @@ const testButton = () => {
 			<template v-slot:end>B</template>
 		</NuitralList>
 	</div>
+
+	<div class="mb-2" style="height: 200px">
+		<NuitralList direction="vertical">
+			<template v-slot:start>A</template>
+			a
+			<template v-slot:end>B</template>
+		</NuitralList>
+	</div>
+
 	<br />
 	<div class="flex gap-2">
-		<NuitralChip primary icon="basket">Chip Primary</NuitralChip>
+		<NuitralChip primary icon="basket" iconPosition="right">Chip Primary</NuitralChip>
 		<NuitralChip secondary icon="basket">Chip Secondary</NuitralChip>
 		<NuitralChip accent>Chip accent</NuitralChip>
 		<NuitralChip error>Chip error</NuitralChip>
