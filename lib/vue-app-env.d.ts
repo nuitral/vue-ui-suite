@@ -8,11 +8,15 @@ import type {
 import type { NuitralIcons, NuitralIconsId } from '@nuitral/icons'
 
 declare module 'vue' {
+
 	interface GlobalComponents {
 		'nuitral-core-input': any
 		'nuitral-core-icon': any
 		'nuitral-core-chip': any
 	}
+	import type { DefineComponent } from 'vue'
+	const component: DefineComponent<{}, {}, any>
+	export default component
 }
 
 declare module '@vue/runtime-dom' {
