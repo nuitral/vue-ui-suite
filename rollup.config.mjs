@@ -17,46 +17,46 @@ const licenseBanner = `/**
  */`
 
 export default {
-	input: 'lib/index.ts',
-	output: [
-		{
-			file: 'dist/vue-ui-suite.cjs.js',
-			format: 'cjs',
-			sourcemap: true,
-			exports: 'named',
-		},
-		{
-			file: 'dist/vue-ui-suite.esm.js',
-			format: 'esm',
-			sourcemap: true,
-		},
-	],
-	external: ['vue', '@nuitral/types', '@nuitral/icons'],
-	plugins: [
-		license({
-			banner: licenseBanner,
-			sourcemap: true,
-		}),
-		peerDepsExternal(),
-		resolve({
-			extensions: ['.mjs', '.js', '.ts', '.vue'],
-		}),
-		vue(),
-		esbuild({
-			include: /\.[jt]s?$/,
-			exclude: /node_modules/,
-			sourceMap: true,
-			target: 'es2022',
-			legalComments: 'inline',
-			loaders: {
-				'.vue': 'ts',
-			},
-		}),
-		commonjs(),
-		terser({
-			format: {
-				comments: /@license/i,
-			},
-		}),
-	],
+    input: 'lib/index.ts',
+    output: [
+        {
+            file: 'dist/vue-ui-suite.cjs.js',
+            format: 'cjs',
+            sourcemap: true,
+            exports: 'named',
+        },
+        {
+            file: 'dist/vue-ui-suite.esm.js',
+            format: 'esm',
+            sourcemap: true,
+        },
+    ],
+    external: ['vue', '@nuitral/types', '@nuitral/icons'],
+    plugins: [
+        license({
+            banner: licenseBanner,
+            sourcemap: true,
+        }),
+        peerDepsExternal(),
+        resolve({
+            extensions: ['.mjs', '.js', '.ts', '.vue'],
+        }),
+        vue(),
+        esbuild({
+            include: /\.[jt]s?$/,
+            exclude: /node_modules/,
+            sourceMap: true,
+            target: 'es2022',
+            legalComments: 'inline',
+            loaders: {
+                '.vue': 'ts',
+            },
+        }),
+        commonjs(),
+        terser({
+            format: {
+                comments: /@license/i,
+            },
+        }),
+    ],
 }

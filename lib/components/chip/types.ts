@@ -19,5 +19,5 @@ import { NuitralIconsId } from '@nuitral/icons'
  *   Can be a valid `NuitralIconsId` or `null`.
  */
 export interface NuitralChipProps extends ChipProps {
-	icon?: NuitralIconsId | null
+    icon?: NuitralIconsId | null
 }

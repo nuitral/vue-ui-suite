@@ -8,5 +8,5 @@ import { NuitralTabsProps as TabsProps } from '@nuitral/types'
  * - `items`: An array of tab items. Each item is a partial of `NuitralTabProps`, allowing for optional properties within each tab.
  */
 export interface NuitralTabsProps extends TabsProps {
-	items: Partial<NuitralTabProps>[]
+    items: Partial<NuitralTabProps>[]
 }
