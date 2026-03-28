@@ -5,6 +5,10 @@ import path from 'path'
 export default defineConfig(({ mode }) => {
     const useLocal = mode === 'dev'
 
+  console.log(
+    `\nnuitral demo mode: ${useLocal ? 'Dev' : 'NPM Registry'}\n`
+  )
+
     const alias = useLocal
         ? {
             '@nuitral/core': path.resolve(__dirname, '../core/lib'),
@@ -13,10 +17,6 @@ export default defineConfig(({ mode }) => {
             '@nuitral/types': path.resolve(__dirname, '../types'),
         }
         : undefined
-
-    console.log(
-        `\nnuitral demo mode: ${useLocal ? 'Dev' : 'NPM Registry'}\n`
-    )
 
     return {
         root: path.resolve(__dirname, 'demo'),
