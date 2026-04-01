@@ -8,6 +8,7 @@ import {
     NuitralTab,
     NuitralTabs,
     NuitralChip,
+    NuitralList,
     useNuitralTheming,
 } from '../lib'
 import { ref } from 'vue'
@@ -48,6 +49,25 @@ const testButton = () => {
     <button @click="manageTheme('pop')">Set pop theme</button>
     <h1>nuitral Vue UI Suite</h1>
     <br />
+
+    <div class="mb-2">
+        <NuitralList>
+            <template v-slot:start>A</template>
+            a
+            <template v-slot:end>B</template>
+        </NuitralList>
+    </div>
+
+    <div class="mb-2" style="height: 200px">
+        <NuitralList direction="vertical">
+            <template v-slot:start>A</template>
+            a
+            <template v-slot:end>B</template>
+        </NuitralList>
+    </div>
+
+    <br>
+
     <div class="flex gap-2">
         <NuitralChip primary icon="basket">
             Chip Primary
