@@ -8,7 +8,6 @@ const props = withDefaults(defineProps<NuitralInputProps>(), {
     modelValue: '',
     type: 'text',
     placeholder: '',
-    placeholder: '',
     icon: null,
     iconPosition: 'left',
     disabled: false,
