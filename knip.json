@@ -1,0 +1,5 @@
+{
+	"entry": ["lib/index.ts"],
+	"project": ["lib/**/*.{ts,vue}"],
+	"ignore": ["@nuitral/types", "@nuitral/icons", "@nuitral/theming"]
+}

@@ -1,17 +1,18 @@
 {
 	"compilerOptions": {
 		"declaration": true,
+		"declarationDir": "dist",
 		"declarationMap": true,
-		"emitDeclarationOnly": true,
-		"outDir": "./dist",
+		"outDir": "dist",
 		"moduleResolution": "node",
-		"target": "ESNext",
-		"module": "ESNext",
-		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
-		"baseUrl": "."
+		"importHelpers": true,
+		"strict": true,
+		"module": "esnext",
+		"target": "es2022",
+		"emitDeclarationOnly": true,
+		"jsx": "preserve"
 	},
 	"include": ["lib/**/*"],
 	"exclude": ["demo", "node_modules"]

@@ -2,42 +2,55 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
-export default defineConfig(({ command }) => {
-	const isDev = command === 'serve'
+export default defineConfig(({ mode }) => {
+    const useLocal = mode === 'dev'
 
-	return {
-		root: isDev ? path.resolve(__dirname, 'demo') : process.cwd(),
-		build: {
-			lib: {
-				entry: path.resolve(__dirname, 'lib/index.ts'),
-				name: 'vue-ui-suite',
-				fileName: format => `vue-ui-suite.${format}.js`,
-			},
-			sourcemap: true,
-			rollupOptions: {
-				external: ['vue'],
-				output: [
-					{
-						format: 'es',
-						entryFileNames: 'vue-ui-suite.esm.js',
-						dir: 'dist',
-					},
-					{
-						format: 'cjs',
-						entryFileNames: 'vue-ui-suite.cjs.js',
-						dir: 'dist',
-					},
-				],
-			},
-		},
-		plugins: [
-			vue({
-				template: {
-					compilerOptions: {
-						isCustomElement: tag => tag.startsWith('nuitral-'),
-					},
-				},
-			}),
-		],
-	}
+  console.log(
+    `\nnuitral demo mode: ${useLocal ? 'Dev' : 'NPM Registry'}\n`
+  )
+
+    const alias = useLocal
+        ? {
+            '@nuitral/core': path.resolve(__dirname, '../core/lib'),
+            '@nuitral/icons/dist/nuitral-icons.scss': path.resolve(__dirname, '../icons/dist/nuitral-icons.scss'),
+            '@nuitral/theming': path.resolve(__dirname, '../theming/lib/scss/_index.scss'),
+            '@nuitral/types': path.resolve(__dirname, '../types'),
+        }
+        : undefined
+
+    return {
+        root: path.resolve(__dirname, 'demo'),
+
+        plugins: [
+            vue({
+                template: {
+                    compilerOptions: {
+                        isCustomElement: tag =>
+                            tag.startsWith('nuitral-'),
+                    },
+                },
+            }),
+        ],
+
+        resolve: {
+            alias,
+        },
+
+        server: {
+            fs: {
+                allow: ['..'],
+            },
+        },
+
+        optimizeDeps: {
+            exclude: useLocal
+                ? [
+                    '@nuitral/core',
+                    '@nuitral/icons',
+                    '@nuitral/theming',
+                    '@nuitral/types',
+                ]
+                : [],
+        },
+    }
 })

@@ -5,55 +5,56 @@ import { NuitralInputProps } from './types'
 const emit = defineEmits(['update:modelValue'])
 
 const props = withDefaults(defineProps<NuitralInputProps>(), {
-	modelValue: '',
-	type: 'text',
-	placeholder: '',
-	icon: null,
-	iconPosition: 'left',
-	disabled: false,
-	classes: '',
+    modelValue: '',
+    type: 'text',
+    placeholder: '',
+    placeholder: '',
+    icon: null,
+    iconPosition: 'left',
+    disabled: false,
+    classes: '',
 })
 
 const inputRef = ref<any>(null)
 
 const computedClasses = () =>
-	`${props.classes} ${props.disabled ? 'disabled' : ''}`.trim()
+    `${props.classes} ${props.disabled ? 'disabled' : ''}`.trim()
 
 const handleValueChange = (e: CustomEvent) => {
-	emit('update:modelValue', e.detail.value)
+    emit('update:modelValue', e.detail.value)
 }
 
 onMounted(() => {
-	if (inputRef.value) {
-		inputRef.value.addEventListener('value-change', handleValueChange)
-	}
+    if (inputRef.value) {
+        inputRef.value.addEventListener('value-change', handleValueChange)
+    }
 })
 
 onBeforeUnmount(() => {
-	if (inputRef.value) {
-		inputRef.value.removeEventListener('value-change', handleValueChange)
-	}
+    if (inputRef.value) {
+        inputRef.value.removeEventListener('value-change', handleValueChange)
+    }
 })
 
 watch(
-	() => props.modelValue,
-	newVal => {
-		if (inputRef.value && inputRef.value.value !== newVal) {
-			inputRef.value.value = newVal
-		}
-	}
+    () => props.modelValue,
+    newVal => {
+        if (inputRef.value && inputRef.value.value !== newVal) {
+            inputRef.value.value = newVal
+        }
+    }
 )
 </script>
 
 <template>
-	<nuitral-core-input
-		ref="inputRef"
-		:value="modelValue"
-		:type="type"
-		:icon="icon"
-		:iconposition="iconPosition"
-		:placeholder="placeholder"
-		:disabled="disabled"
-		:classes="computedClasses()"
-	/>
+    <nuitral-core-input
+        ref="inputRef"
+        :value="modelValue"
+        :type="type"
+        :icon="icon"
+        :iconposition="iconPosition"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :classes="computedClasses()"
+    />
 </template>

@@ -12,8 +12,8 @@ import { NuitralTabProps as TabProps } from '@nuitral/types'
  * - `rightSide`: A Vue virtual node (`VNode`) to be rendered on the right side of the tab. Can be `null`.
  */
 export interface NuitralTabProps extends TabProps {
-	component: Component | null
-	icon: NuitralIconsId | null
-	leftSide: VNode | null
-	rightSide: VNode | null
+    component: Component | null
+    icon: NuitralIconsId | null
+    leftSide: VNode | null
+    rightSide: VNode | null
 }
