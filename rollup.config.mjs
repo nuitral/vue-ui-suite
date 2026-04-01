@@ -31,7 +31,7 @@ export default {
             sourcemap: true,
         },
     ],
-    external: ['vue', '@nuitral/types', '@nuitral/icons'],
+    external: ['vue', '@nuitral/types', '@nuitral/icons', '@nuitral/core', '@nuitral/theming'],
     plugins: [
         license({
             banner: licenseBanner,

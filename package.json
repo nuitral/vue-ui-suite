@@ -31,7 +31,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:nuitral/vue-ui-suite.git"
+		"url": "git+ssh://git@github.com/nuitral/vue-ui-suite.git"
 	},
 	"homepage": "https://nuitral.github.io",
 	"peerDependencies": {
