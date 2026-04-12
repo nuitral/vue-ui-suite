@@ -37,17 +37,44 @@ Then, use one of the following commands:
   npm run dev
   ```
 
+---
 > ⚠️ When running in development mode, make sure all related libraries are located **in the same root directory** as
 > this project.  
 > Otherwise, update the Vite configuration aliases accordingly:
 
+#### vite.config.ts in dev mode
+
 ```js
 const alias = {
 	'@nuitral/core': path.resolve(__dirname, '../core/lib'),
-	'@nuitral/icons/dist/nuitral-icons.scss': path.resolve(__dirname, '../icons/dist/nuitral-icons.scss'),
 	'@nuitral/theming': path.resolve(__dirname, '../theming/lib/scss/_index.scss'),
 	'@nuitral/types': path.resolve(__dirname, '../types'),
 } 
+```
+
+#### tsconfig.json in dev mode
+
+```jsonc
+
+{
+  "compilerOptions": {
+    ...
+    "paths": {
+      "@nuitral/types": [
+        "../types/lib"
+      ],
+      "@nuitral/core": [
+        "../core/lib"
+      ],
+      "@nuitral/theming": [
+        "../theming/lib/scss/_index.scss"
+      ]
+    }
+    ...
+  }
+  ...
+}
+
 ```
 
 ---

@@ -8,10 +8,8 @@
 //$height-atoms: 2rem,
 //$border-radius-molecules: 2rem,
 //);
-@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
+@use '@nuitral/theming' as nuitral;
 @import '@nuitral/icons';
-
-//@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
 
 $light-mode: (
         primary: #ff0054,

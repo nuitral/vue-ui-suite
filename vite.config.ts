@@ -6,8 +6,7 @@ export default defineConfig(() => {
 
     const alias = {
         '@nuitral/core': path.resolve(__dirname, '../core/lib'),
-        '@nuitral/icons/dist/nuitral-icons.scss': path.resolve(__dirname, '../icons/dist/nuitral-icons.scss'),
-        '@nuitral/theming': path.resolve(__dirname, '../theming'),
+        '@nuitral/theming': path.resolve(__dirname, '../theming/lib/scss/_index.scss'),
         '@nuitral/types': path.resolve(__dirname, '../types/lib'),
     }
 

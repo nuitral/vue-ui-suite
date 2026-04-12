@@ -10,7 +10,7 @@
         "../core/lib"
       ],
       "@nuitral/theming": [
-        "../tehming/lib/scss/_index.scss"
+        "../theming/lib/scss/_index.scss"
       ]
     }
   },
