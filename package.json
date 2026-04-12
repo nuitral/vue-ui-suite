@@ -35,12 +35,13 @@
   },
   "homepage": "https://nuitral.github.io",
   "peerDependencies": {
-    "vue": "^3.3.0",
     "@nuitral/core": "^0.0.1-beta.2",
     "@nuitral/icons": "^0.0.1-alpha.2",
-    "@nuitral/theming": "^0.0.1-beta.2"
+    "@nuitral/theming": "^0.0.1-beta.3",
+    "vue": "^3.3.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@rollup/plugin-commonjs": "^29.0.2",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",
@@ -49,9 +50,9 @@
     "@types/node": "^22.15.29",
     "@types/rollup-plugin-peer-deps-external": "^2.2.6",
     "@vitejs/plugin-vue": "^5.2.4",
-    "eslint": "^9.39.4",
+    "eslint": "^10.2.0",
     "eslint-plugin-vue": "^10.8.0",
-    "globals": "^17.4.0",
+    "globals": "^17.5.0",
     "knip": "^6.0.5",
     "rollup": "^4.41.1",
     "rollup-plugin-esbuild": "^6.2.1",
@@ -60,7 +61,7 @@
     "sass": "^1.89.1",
     "tslib": "^2.8.1",
     "typescript": "5.8.3",
-    "typescript-eslint": "^8.57.2",
+    "typescript-eslint": "^8.58.1",
     "unplugin-vue": "^7.1.1",
     "vite": "^6.3.5",
     "vite-plugin-checker": "^0.12.0",
