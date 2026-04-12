@@ -1,18 +1,6 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "dist",
-    "declarationMap": true,
-    "outDir": "dist",
-    "moduleResolution": "node",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "importHelpers": true,
-    "strict": true,
-    "module": "esnext",
-    "target": "es2022",
-    "emitDeclarationOnly": true,
-    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "@nuitral/types": [
@@ -20,6 +8,9 @@
       ],
       "@nuitral/core": [
         "../core/lib"
+      ],
+      "@nuitral/theming": [
+        "../tehming/lib/scss/_index.scss"
       ]
     }
   },

@@ -37,7 +37,7 @@ export default {
     external: ['vue', '@nuitral/types', '@nuitral/icons', '@nuitral/core', '@nuitral/theming'],
     plugins: [
         typescript({
-            tsconfig: './tsconfig.build.json',      // Use this tsconfig file to configure TypeScript compilation
+            tsconfig: './tsconfig.build.json',
         }),
         license({
             banner: licenseBanner,

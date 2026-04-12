@@ -1,8 +1,9 @@
 {
   "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "paths": null
-  }
+  "include": [
+    "demo",
+    "vite.config.demo.ts"
+  ]
 }
 
 

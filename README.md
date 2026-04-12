@@ -10,7 +10,8 @@
 
 **nuitral Vue UI suite** provides a complete, native, and flexible UI component library for Vue projects.
 
-This library is part of the **nuitral** suite, a native UI toolkit designed to build modern, flexible, and high-performance interfaces.
+This library is part of the **nuitral** suite, a native UI toolkit designed to build modern, flexible, and
+high-performance interfaces.
 
 [Explore the suite](https://nuitral.github.io)
 
@@ -36,49 +37,50 @@ Then, use one of the following commands:
   npm run dev
   ```
 
-> ⚠️ When running in development mode, make sure all related libraries are located **in the same root directory** as this project.  
+> ⚠️ When running in development mode, make sure all related libraries are located **in the same root directory** as
+> this project.  
 > Otherwise, update the Vite configuration aliases accordingly:
 
 ```js
-const alias = useLocal ? {
-  '@nuitral/core': path.resolve(__dirname, '../core/lib'),
-  '@nuitral/icons/dist/nuitral-icons.scss': path.resolve(__dirname, '../icons/dist/nuitral-icons.scss'),
-  '@nuitral/theming': path.resolve(__dirname, '../theming/lib/scss/_index.scss'),
-  '@nuitral/types': path.resolve(__dirname, '../types'),
-} : undefined
+const alias = {
+	'@nuitral/core': path.resolve(__dirname, '../core/lib'),
+	'@nuitral/icons/dist/nuitral-icons.scss': path.resolve(__dirname, '../icons/dist/nuitral-icons.scss'),
+	'@nuitral/theming': path.resolve(__dirname, '../theming/lib/scss/_index.scss'),
+	'@nuitral/types': path.resolve(__dirname, '../types'),
+} 
 ```
+
 ---
 
 ### Progress Status
 
-| Status | Module / Component | Description                     |
-|--------|------------------|---------------------------------|
-| ✅     | `NuitralBox`      | Box component                   |
-| ✅     | `NuitralButton`   | Button component                |
-| ☑️     | `NuitralCard`     | Card component – available in beta |
-| ☑️     | `NuitralChip`     | Chip component – available in beta |
-| ✅     | `NuitralIcon`     | Icon component                  |
-| ✅     | `NuitralInput`    | Input component                 |
-| 🕒     | `NuitralList`     | List component                  |
-| 🕒     | `NuitralSelect`   | Select component                |
-| ✅     | `NuitralTab`      | Tab component                   |
-| ✅     | `NuitralTabs`     | Tabs component                  |
+| Status | Module / Component | Description                        |
+|--------|--------------------|------------------------------------|
+| ✅      | `NuitralBox`       | Box component                      |
+| ✅      | `NuitralButton`    | Button component                   |
+| ☑️     | `NuitralCard`      | Card component – available in beta |
+| ☑️     | `NuitralChip`      | Chip component – available in beta |
+| ✅      | `NuitralIcon`      | Icon component                     |
+| ✅      | `NuitralInput`     | Input component                    |
+| 🕒     | `NuitralList`      | List component                     |
+| 🕒     | `NuitralSelect`    | Select component                   |
+| ✅      | `NuitralTab`       | Tab component                      |
+| ✅      | `NuitralTabs`      | Tabs component                     |
 
 ### Component Status Legend
 
-| Icon | Status Description |
-|------|------------------|
-| ✅    | Completed – component is finished and stable |
-| ☑️    | Available – component is usable but still in beta or under refinement |
-| 🚧    | In progress – component is being actively developed |
-| 🕒    | Planned – component is not yet started or scheduled for future development |
+| Icon | Status Description                                                         |
+|------|----------------------------------------------------------------------------|
+| ✅    | Completed – component is finished and stable                               |
+| ☑️   | Available – component is usable but still in beta or under refinement      |
+| 🚧   | In progress – component is being actively developed                        |
+| 🕒   | Planned – component is not yet started or scheduled for future development |
 
 ---
 
 **Status:** Currently in **beta version**.
 
 ---
-
 
 ### License
 

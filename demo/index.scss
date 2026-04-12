@@ -8,48 +8,48 @@
 //$height-atoms: 2rem,
 //$border-radius-molecules: 2rem,
 //);
-@use '../../theming/lib/scss/_index.scss' as nuitral;
+@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
 @import '@nuitral/icons';
 
 //@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
 
 $light-mode: (
-	primary: #ff0054,
-	secondary: #00d8ff,
-	accent: #ffdc00,
-	error: #ff4136,
-	success: #2ecc40,
-	warning: #ff851b,
-	info: #0074d9,
-	neutral: #b10dc9,
-	background: #fdfefe,
-	surface: #ffffff,
+        primary: #ff0054,
+        secondary: #00d8ff,
+        accent: #ffdc00,
+        error: #ff4136,
+        success: #2ecc40,
+        warning: #ff851b,
+        info: #0074d9,
+        neutral: #b10dc9,
+        background: #fdfefe,
+        surface: #ffffff,
 );
 
 $dark-mode: (
-	primary: #ff337a,
-	secondary: #00a3cc,
-	accent: #ffd700,
-	error: #ff6347,
-	success: #28a745,
-	warning: #ff7733,
-	info: #006699,
-	neutral: #a569bd,
-	background: #1e1e1e,
-	surface: #121212,
+        primary: #ff337a,
+        secondary: #00a3cc,
+        accent: #ffd700,
+        error: #ff6347,
+        success: #28a745,
+        warning: #ff7733,
+        info: #006699,
+        neutral: #a569bd,
+        background: #1e1e1e,
+        surface: #121212,
 );
 
 $theme-nuitral: nuitral.generate-theme(
-	//(variables: (misc: (height-atoms: 120px, border-radius-molecules: 4rem, border-radius-atoms: 100%)))
+  //(variables: (misc: (height-atoms: 120px, border-radius-molecules: 4rem, border-radius-atoms: 100%)))
 );
 
 $theme-pop: nuitral.generate-theme(
-	(
-		theme-name: 'pop',
-		scale-light: $light-mode,
-		scale-dark: $dark-mode,
-		//variables: (misc: (height-atoms: 50px, border-radius-atoms: 0))
-	)
+        (
+                theme-name: 'pop',
+                scale-light: $light-mode,
+                scale-dark: $dark-mode,
+          //variables: (misc: (height-atoms: 50px, border-radius-atoms: 0))
+        )
 );
 
 @include nuitral.apply-theme($theme-nuitral);
@@ -57,12 +57,12 @@ $theme-pop: nuitral.generate-theme(
 
 html,
 body {
-	margin: 0;
-	width: 100%;
+  margin: 0;
+  width: 100%;
 }
 
 body {
-	padding: 1rem;
-	box-sizing: border-box;
-	background-color: nuitral.$background-300 !important;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: nuitral.$background-300 !important;
 }

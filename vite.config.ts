@@ -2,17 +2,14 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
-export default defineConfig(({ mode }) => {
-    const useLocal = mode === 'dev'
+export default defineConfig(() => {
 
-    const alias = useLocal
-        ? {
-            '@nuitral/core': path.resolve(__dirname, '../core/lib'),
-            '@nuitral/icons/dist/nuitral-icons.scss': path.resolve(__dirname, '../icons/dist/nuitral-icons.scss'),
-            '@nuitral/theming': path.resolve(__dirname, '../theming/lib/scss/_index.scss'),
-            '@nuitral/types': path.resolve(__dirname, '../types/lib'),
-        }
-        : undefined
+    const alias = {
+        '@nuitral/core': path.resolve(__dirname, '../core/lib'),
+        '@nuitral/icons/dist/nuitral-icons.scss': path.resolve(__dirname, '../icons/dist/nuitral-icons.scss'),
+        '@nuitral/theming': path.resolve(__dirname, '../theming'),
+        '@nuitral/types': path.resolve(__dirname, '../types/lib'),
+    }
 
     return {
         root: path.resolve(__dirname, 'demo'),
@@ -29,7 +26,6 @@ export default defineConfig(({ mode }) => {
         resolve: {
             alias,
         },
-
         server: {
             fs: {
                 allow: ['..'],
@@ -37,14 +33,12 @@ export default defineConfig(({ mode }) => {
         },
 
         optimizeDeps: {
-            exclude: useLocal
-                ? [
-                    '@nuitral/core',
-                    '@nuitral/icons',
-                    '@nuitral/theming',
-                    '@nuitral/types',
-                ]
-                : [],
+            exclude: [
+                '@nuitral/core',
+                '@nuitral/icons',
+                '@nuitral/theming',
+                '@nuitral/types',
+            ],
         },
     }
 })
