@@ -9,7 +9,7 @@ import {
     useAttrs,
 } from 'vue'
 import { useColorsAttributesValidator } from '../../composables'
-import { NuitralIcon } from '../index'
+import NuitralIcon from '../icon/Icon.vue'
 import { NuitralTabsProps } from './types'
 import { NuitralTabProps } from '../tab/types'
 
@@ -42,7 +42,7 @@ const borderColor = computed(() => {
 const allItems = computed(() => manageAllItems())
 
 const getDefaultValues = (
-    propDefinitions: Record<string, any>
+    propDefinitions: Record<string, any>,
 ): NuitralTabProps => {
     const defaultValues: Record<string, any> = {}
 
@@ -89,7 +89,7 @@ const manageTabs = (): NuitralTabProps[] => {
 			node.children &&
 			Array.isArray(node.children) &&
 			node.children.every(
-			    (child: any) => isVNode(child) && (child.type as any).__name === 'Tab'
+			    (child: any) => isVNode(child) && (child.type as any).__name === 'Tab',
 			)
         ) {
             const children = node.children as VNode[]

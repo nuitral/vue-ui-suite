@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, useAttrs } from 'vue'
 import { NuitralButtonProps } from './types'
-import { NuitralIcon } from '../index'
+import NuitralIcon from '../icon/Icon.vue'
 
 import { useColorsAttributesValidator } from '../../composables'
 
@@ -17,7 +17,7 @@ const backgroundColor = computed(() => {
         }
     }
     return Object.keys(filteredAttrs).map(
-        key => `nuitral-button-background-${key}`
+        key => `nuitral-button-background-${key}`,
     )
 })
 

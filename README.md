@@ -89,7 +89,7 @@ const alias = {
 | ☑️     | `NuitralChip`      | Chip component – available in beta |
 | ✅      | `NuitralIcon`      | Icon component                     |
 | ✅      | `NuitralInput`     | Input component                    |
-| 🕒     | `NuitralList`      | List component                     |
+| 🚧     | `NuitralList`      | List component – available in beta |
 | 🕒     | `NuitralSelect`    | Select component                   |
 | ✅      | `NuitralTab`       | Tab component                      |
 | ✅      | `NuitralTabs`      | Tabs component                     |
