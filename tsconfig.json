@@ -1,19 +1,33 @@
 {
-	"compilerOptions": {
-		"declaration": true,
-		"declarationDir": "dist",
-		"declarationMap": true,
-		"outDir": "dist",
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"importHelpers": true,
-		"strict": true,
-		"module": "esnext",
-		"target": "es2022",
-		"emitDeclarationOnly": true,
-		"jsx": "preserve"
-	},
-	"include": ["lib/**/*"],
-	"exclude": ["demo", "node_modules"]
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist",
+    "declarationMap": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "strict": true,
+    "module": "esnext",
+    "target": "es2022",
+    "emitDeclarationOnly": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@nuitral/types": [
+        "../types/lib"
+      ],
+      "@nuitral/core": [
+        "../core/lib"
+      ]
+    }
+  },
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "demo",
+    "node_modules"
+  ]
 }

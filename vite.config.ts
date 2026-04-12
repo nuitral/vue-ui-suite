@@ -10,13 +10,12 @@ export default defineConfig(({ mode }) => {
             '@nuitral/core': path.resolve(__dirname, '../core/lib'),
             '@nuitral/icons/dist/nuitral-icons.scss': path.resolve(__dirname, '../icons/dist/nuitral-icons.scss'),
             '@nuitral/theming': path.resolve(__dirname, '../theming/lib/scss/_index.scss'),
-            '@nuitral/types': path.resolve(__dirname, '../types'),
+            '@nuitral/types': path.resolve(__dirname, '../types/lib'),
         }
         : undefined
 
     return {
         root: path.resolve(__dirname, 'demo'),
-
         plugins: [
             vue({
                 template: {
@@ -27,7 +26,6 @@ export default defineConfig(({ mode }) => {
                 },
             }),
         ],
-
         resolve: {
             alias,
         },

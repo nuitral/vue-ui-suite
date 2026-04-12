@@ -1,71 +1,73 @@
 {
-	"name": "@nuitral/vue-ui-suite",
-	"version": "0.0.1-beta.2",
-	"publishConfig": {
-		"access": "public"
-	},
-	"type": "module",
-	"main": "dist/vue-ui-suite.cjs.js",
-	"module": "dist/vue-ui-suite.esm.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"dev": "vite --mode dev",
-		"demo": "vite --mode demo",
-		"build:rollup": "rollup -c",
-		"types": "vue-tsc --declaration --emitDeclarationOnly",
-		"build": "npm run build:rollup && npm run types",
-		"preview": "vite preview",
-		"lint": "eslint . --fix"
-	},
-	"keywords": [
-		"nuitral",
-		"UI",
-		"Vue",
-		"suite"
-	],
-	"description": "nuitral Vue UI suite",
-	"author": "Nicola Centonze",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/nuitral/vue-ui-suite.git"
-	},
-	"homepage": "https://nuitral.github.io",
-	"peerDependencies": {
-		"vue": "^3.3.0"
-	},
-	"dependencies": {
-		"@nuitral/core": "^0.0.1-beta.2",
-		"@nuitral/icons": "^0.0.1-alpha.2",
-		"@nuitral/theming": "^0.0.1-beta.2",
-		"@nuitral/types": "^0.0.1-beta.1"
-	},
-	"devDependencies": {
-		"@rollup/plugin-commonjs": "^29.0.2",
-		"@rollup/plugin-node-resolve": "^16.0.3",
-		"@rollup/plugin-terser": "^1.0.0",
-		"@stylistic/eslint-plugin": "^5.10.0",
-		"@types/node": "^22.15.29",
-		"@types/rollup-plugin-peer-deps-external": "^2.2.6",
-		"@vitejs/plugin-vue": "^5.2.4",
-		"eslint": "^9.39.4",
-		"eslint-plugin-vue": "^10.8.0",
-		"globals": "^17.4.0",
-		"knip": "^6.0.5",
-		"rollup": "^4.41.1",
-		"rollup-plugin-esbuild": "^6.2.1",
-		"rollup-plugin-license": "^3.7.0",
-		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"sass": "^1.89.1",
-		"tslib": "^2.8.1",
-		"typescript": "5.8.3",
-		"typescript-eslint": "^8.57.2",
-		"unplugin-vue": "^7.1.1",
-		"vite": "^6.3.5",
-		"vue-eslint-parser": "^10.4.0",
-		"vue-tsc": "^2.2.12"
-	}
+  "name": "@nuitral/vue-ui-suite",
+  "version": "0.0.1-beta.2",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "dist/vue-ui-suite.cjs.js",
+  "module": "dist/vue-ui-suite.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --mode dev",
+    "demo": "vite --mode demo",
+    "build:rollup": "rollup -c",
+    "types": "vue-tsc --declaration --emitDeclarationOnly --project tsconfig.build.json",
+    "build": "npm run build:rollup && npm run types",
+    "preview": "vite preview",
+    "lint": "eslint . --fix"
+  },
+  "keywords": [
+    "nuitral",
+    "UI",
+    "Vue",
+    "suite"
+  ],
+  "description": "nuitral Vue UI suite",
+  "author": "Nicola Centonze",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nuitral/vue-ui-suite.git"
+  },
+  "homepage": "https://nuitral.github.io",
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "@nuitral/core": "^0.0.1-beta.2",
+    "@nuitral/icons": "^0.0.1-alpha.2",
+    "@nuitral/theming": "^0.0.1-beta.2",
+    "@nuitral/types": "^0.0.1-beta.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^22.15.29",
+    "@types/rollup-plugin-peer-deps-external": "^2.2.6",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.4.0",
+    "knip": "^6.0.5",
+    "rollup": "^4.41.1",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "rollup-plugin-license": "^3.7.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "sass": "^1.89.1",
+    "tslib": "^2.8.1",
+    "typescript": "5.8.3",
+    "typescript-eslint": "^8.57.2",
+    "unplugin-vue": "^7.1.1",
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vue-eslint-parser": "^10.4.0",
+    "vue-tsc": "^2.2.12"
+  }
 }

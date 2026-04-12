@@ -6,6 +6,8 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import terser from '@rollup/plugin-terser'
 import license from 'rollup-plugin-license'
 
+import typescript from '@rollup/plugin-typescript'
+
 const licenseBanner = `/**
  * @license
  * nuitral UI Suite
@@ -18,6 +20,7 @@ const licenseBanner = `/**
 
 export default {
     input: 'lib/index.ts',
+    treeshake: true,
     output: [
         {
             file: 'dist/vue-ui-suite.cjs.js',
@@ -33,6 +36,9 @@ export default {
     ],
     external: ['vue', '@nuitral/types', '@nuitral/icons', '@nuitral/core', '@nuitral/theming'],
     plugins: [
+        typescript({
+            tsconfig: './tsconfig.build.json',      // Use this tsconfig file to configure TypeScript compilation
+        }),
         license({
             banner: licenseBanner,
             sourcemap: true,
