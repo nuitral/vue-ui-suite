@@ -35,9 +35,7 @@
   },
   "homepage": "https://nuitral.github.io",
   "peerDependencies": {
-    "vue": "^3.3.0"
-  },
-  "dependencies": {
+    "vue": "^3.3.0",
     "@nuitral/core": "^0.0.1-beta.2",
     "@nuitral/icons": "^0.0.1-alpha.2",
     "@nuitral/theming": "^0.0.1-beta.2"
@@ -66,7 +64,6 @@
     "unplugin-vue": "^7.1.1",
     "vite": "^6.3.5",
     "vite-plugin-checker": "^0.12.0",
-    "vite-tsconfig-paths": "^6.1.1",
     "vue-eslint-parser": "^10.4.0",
     "vue-tsc": "^2.2.12"
   }
