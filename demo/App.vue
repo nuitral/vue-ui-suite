@@ -49,11 +49,24 @@ const testButton = () => {
     <button @click="manageTheme('pop')">Set pop theme</button>
     <h1>nuitral Vue UI Suite</h1>
     <br />
-
+    <div class="mb-2">
+        <NuitralList justify="end">
+            <template v-slot:start>A</template>
+            End Content
+            <template v-slot:end>B</template>
+        </NuitralList>
+    </div>
+    <div class="mb-2">
+        <NuitralList justify="center">
+            <template v-slot:start>A</template>
+            Center content
+            <template v-slot:end>B</template>
+        </NuitralList>
+    </div>
     <div class="mb-2">
         <NuitralList>
             <template v-slot:start>A</template>
-            a
+            Start content
             <template v-slot:end>B</template>
         </NuitralList>
     </div>

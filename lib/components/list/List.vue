@@ -5,6 +5,7 @@ import { NuitralListProps } from '@nuitral/types'
 const props = withDefaults(defineProps<NuitralListProps>(), {
     direction: 'horizontal',
     classes: '',
+    justify: 'start',
 })
 
 const computedClasses = computed(() => `${props.classes} ${props.direction}`)
@@ -17,7 +18,7 @@ const slots = useSlots()
         <div class="start">
             <slot name="start" v-if="slots.start" />
         </div>
-        <div class="default">
+        <div class="default" :class="justify">
             <slot />
         </div>
         <div class="end">
