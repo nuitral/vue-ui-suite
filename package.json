@@ -35,10 +35,10 @@
   },
   "homepage": "https://nuitral.github.io",
   "peerDependencies": {
-    "@nuitral/core": "^0.0.1-beta.2",
-    "@nuitral/types": "^0.0.1-beta.3",
+    "@nuitral/core": "^0.0.1-beta.3",
+    "@nuitral/types": "^0.0.1-beta.4",
     "@nuitral/icons": "^0.0.1-alpha.2",
-    "@nuitral/theming": "^0.0.1-beta.3",
+    "@nuitral/theming": "^0.0.1-beta.4",
     "vue": "^3.3.0"
   },
   "devDependencies": {
