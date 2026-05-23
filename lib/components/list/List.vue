@@ -14,17 +14,18 @@ const slots = useSlots()
 </script>
 <template>
 
-    <div class="nuitral-list" :class="[computedClasses]">
-        <div class="start">
-            <slot name="start" v-if="slots.start" />
+    <nuitral-core-list :classes="[computedClasses]" :justify="justify">
+        <div slot="start" v-if="slots.start">
+            <slot name="start"></slot>
         </div>
-        <div class="default" :class="justify">
-            <slot />
+        <div slot="default">
+            <slot></slot>
         </div>
-        <div class="end">
-            <slot name="end" v-if="slots.end" />
+        <div slot="end" v-if="slots.end">
+            <slot name="end"></slot>
         </div>
-    </div>
+
+    </nuitral-core-list>
 </template>
 
 

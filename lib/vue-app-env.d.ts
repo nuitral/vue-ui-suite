@@ -1,20 +1,21 @@
 /// <reference types="vite/client" />
 
+import type { DefineComponent } from 'vue'
 import type {
     NuitralClass,
+    NuitralContentJustify,
     NuitralIconPosition,
     NuitralInputType,
+    NuitralListDirection,
 } from '@nuitral/types'
 import type { NuitralIconsId } from '@nuitral/icons'
 
 declare module 'vue' {
-    import type { DefineComponent } from 'vue'
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     interface GlobalComponents {
         'nuitral-core-input': any
         'nuitral-core-icon': any
         'nuitral-core-chip': any
+        'nuitral-core-list': any
     }
 
     const component: DefineComponent<unknown, object, any>
@@ -40,6 +41,11 @@ declare module '@vue/runtime-dom' {
             icon?: NuitralIconsId | null
             iconPosition?: NuitralIconPosition
             classes?: NuitralClass
+        }
+        'nuitral-core-list': {
+            classes?: NuitralClass
+            justify: NuitralContentJustify
+            direction?: NuitralListDirection
         }
     }
 }

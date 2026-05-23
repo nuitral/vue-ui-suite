@@ -51,31 +51,83 @@ const testButton = () => {
     <br />
     <div class="mb-2">
         <NuitralList justify="end">
-            <template v-slot:start>A</template>
-            End Content
-            <template v-slot:end>B</template>
+            <template v-slot:start>
+                <div class="nuitral-background-primary">Start</div>
+            </template>
+            <div class="nuitral-background-info">
+                Justify End
+            </div>
+            <template v-slot:end>
+                <div class="nuitral-background-accent">End</div>
+            </template>
         </NuitralList>
     </div>
     <div class="mb-2">
         <NuitralList justify="center">
-            <template v-slot:start>A</template>
-            Center content
-            <template v-slot:end>B</template>
+            <template v-slot:start>
+                <div class="nuitral-background-primary">Start</div>
+            </template>
+            <div class="nuitral-background-info">
+                Justify Center
+            </div>
+            <template v-slot:end>
+                <div class="nuitral-background-accent">End</div>
+            </template>
         </NuitralList>
     </div>
     <div class="mb-2">
         <NuitralList>
-            <template v-slot:start>A</template>
-            Start content
-            <template v-slot:end>B</template>
+            <template v-slot:start>
+                <div class="nuitral-background-primary">Start</div>
+            </template>
+            <div class="nuitral-background-info">
+                Justify Start
+            </div>
+            <template v-slot:end>
+                <div class="nuitral-background-accent">End</div>
+            </template>
         </NuitralList>
     </div>
 
     <div class="mb-2" style="height: 200px">
-        <NuitralList direction="vertical">
-            <template v-slot:start>A</template>
-            a
-            <template v-slot:end>B</template>
+        <NuitralList direction="vertical" justify="start">
+            <template v-slot:start>
+                <div class="nuitral-background-primary">Start</div>
+            </template>
+            <div class="nuitral-background-info">
+                Justify Start
+            </div>
+            <template v-slot:end>
+                <div class="nuitral-background-accent">End</div>
+            </template>
+        </NuitralList>
+    </div>
+
+    <div class="mb-2" style="height: 200px">
+        <NuitralList direction="vertical" justify="center">
+            <template v-slot:start>
+                <div class="nuitral-background-primary">Start</div>
+            </template>
+            <div class="nuitral-background-info">
+                Justify Center
+            </div>
+            <template v-slot:end>
+                <div class="nuitral-background-accent">End</div>
+            </template>
+        </NuitralList>
+    </div>
+
+    <div class="mb-2" style="height: 200px">
+        <NuitralList direction="vertical" justify="end">
+            <template v-slot:start>
+                <div class="nuitral-background-primary">Start</div>
+            </template>
+            <div class="nuitral-background-info">
+                Justify End
+            </div>
+            <template v-slot:end>
+                <div class="nuitral-background-accent">End</div>
+            </template>
         </NuitralList>
     </div>
 
